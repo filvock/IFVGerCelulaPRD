@@ -31,3 +31,39 @@ D:\Drive\FDV\IFV Sistemas\CelProject\GerenciamentoCelulas\GerenciamentoCelulas\o
 D:\Drive\FDV\IFV Sistemas\CelProject\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.application
 D:\Drive\FDV\IFV Sistemas\CelProject\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.exe
 D:\Drive\FDV\IFV Sistemas\CelProject\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.pdb
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Release\GerenciamentoCelulas.exe.config
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Release\GerenciamentoCelulas.exe.manifest
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Release\GerenciamentoCelulas.application
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Release\GerenciamentoCelulas.exe
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Release\GerenciamentoCelulas.pdb
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.csprojResolveAssemblyReference.cache
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Membros.ConvidadoAdd.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Reports.CellFrequency.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Reports.SuccessLadder.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.CidadeAdd.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.CidadeRemove.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Lideres.LiderCelulaAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Admin.UsersAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Admin.IgrejasAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Admin.cidadesAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.IgrejasAdd.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.IgrejasRemove.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.UserAdd.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.UserRemove.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Celula.CelulaMembrosAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Membros.MembroSearch.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Estrutura.SetorAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Estrutura.CelulaAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Estrutura.AreaAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Estrutura.DistritoAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Estrutura.RedesAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.LoginForm.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.MainWindow.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Membros.MemberAdd.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Membros.MemberAdmin.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Properties.Resources.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.csproj.GenerateResource.Cache
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.exe.manifest
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.application
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.exe
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.pdb
