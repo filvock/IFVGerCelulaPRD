@@ -34,3 +34,5 @@ D:\Drive\FDV\IFV Sistemas\CelProject\GerenciamentoCelulas\GerenciamentoCelulas\o
 D:\Drive\FDV\IFV Sistemas\CelProject\GerenciamentoCelulas\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.application
 D:\Drive\FDV\IFV Sistemas\CelProject\GerenciamentoCelulas\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.csprojResolveAssemblyReference.cache
 D:\Drive\FDV\IFV Sistemas\CelProject\GerenciamentoCelulas\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Membros.ConvidadoAdd.resources
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Debug\GerenciamentoCelulas.exe.config
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.pdb
