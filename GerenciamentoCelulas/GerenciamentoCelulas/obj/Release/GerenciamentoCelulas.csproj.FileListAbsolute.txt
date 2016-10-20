@@ -36,7 +36,6 @@ D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Re
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Release\GerenciamentoCelulas.application
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Release\GerenciamentoCelulas.exe
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\bin\Release\GerenciamentoCelulas.pdb
-D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.csprojResolveAssemblyReference.cache
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Membros.ConvidadoAdd.resources
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Reports.CellFrequency.resources
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.Forms.Reports.SuccessLadder.resources
