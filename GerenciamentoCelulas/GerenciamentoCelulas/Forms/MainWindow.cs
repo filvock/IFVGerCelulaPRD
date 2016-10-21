@@ -15,8 +15,44 @@ namespace GerenciamentoCelulas.Forms
     {
 
         public MainWindow()
-        {
+        {           
+
             InitializeComponent();
+
+            float widthRatio = Screen.PrimaryScreen.Bounds.Width / 1366F;
+            float heightRatio = Screen.PrimaryScreen.Bounds.Height / 768F;
+            SizeF scale = new SizeF(widthRatio, heightRatio);
+            this.Scale(scale);
+
+            this.administraçãoToolStripMenuItem.Font = new Font("Microsoft Sans Serif", administraçãoToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            this.CelulasToolStripMenuItem.Font = new Font("Microsoft Sans Serif", CelulasToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            this.estruturaDeLíderesToolStripMenuItem.Font = new Font("Microsoft Sans Serif", estruturaDeLíderesToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            this.cadastroDeMembrosToolStripMenuItem.Font = new Font("Microsoft Sans Serif", cadastroDeMembrosToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            this.célulasToolStripMenuItem1.Font = new Font("Microsoft Sans Serif", célulasToolStripMenuItem1.Font.SizeInPoints * heightRatio * widthRatio);
+            this.célulasToolStripMenuItem2.Font = new Font("Microsoft Sans Serif", célulasToolStripMenuItem2.Font.SizeInPoints * heightRatio * widthRatio);
+            this.célulasToolStripMenuItem3.Font = new Font("Microsoft Sans Serif", célulasToolStripMenuItem3.Font.SizeInPoints * heightRatio * widthRatio);
+            this.relatóriosToolStripMenuItem.Font = new Font("Microsoft Sans Serif", relatóriosToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            
+            
+            //this.mainWindowMenuStrip.Font = new Font("Microsoft Sans Serif", mainWindowMenuStrip.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.cidadesToolStripMenuItem1.Font = new Font("Microsoft Sans Serif", cidadesToolStripMenuItem1.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.igrejasToolStripMenuItem.Font = new Font("Microsoft Sans Serif", igrejasToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.usuáriosToolStripMenuItem.Font = new Font("Microsoft Sans Serif", usuáriosToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.redesToolStripMenuItem.Font = new Font("Microsoft Sans Serif", redesToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.distritosToolStripMenuItem.Font = new Font("Microsoft Sans Serif", distritosToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.áreasToolStripMenuItem.Font = new Font("Microsoft Sans Serif", áreasToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.setoresToolStripMenuItem.Font = new Font("Microsoft Sans Serif", setoresToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.célulasToolStripMenuItem.Font = new Font("Microsoft Sans Serif", célulasToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.pastoresToolStripMenuItem.Font = new Font("Microsoft Sans Serif", pastoresToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.supervisoresToolStripMenuItem.Font = new Font("Microsoft Sans Serif", supervisoresToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.líderesToolStripMenuItem.Font = new Font("Microsoft Sans Serif", líderesToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.membrosToolStripMenuItem.Font = new Font("Microsoft Sans Serif", membrosToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.convidadosToolStripMenuItem.Font = new Font("Microsoft Sans Serif", convidadosToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.novosNascidosToolStripMenuItem.Font = new Font("Microsoft Sans Serif", novosNascidosToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.escadaDoSucessoToolStripMenuItem.Font = new Font("Microsoft Sans Serif", escadaDoSucessoToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.frequênciaCélulaToolStripMenuItem.Font = new Font("Microsoft Sans Serif", frequênciaCélulaToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+            //this.frequênciaCultoToolStripMenuItem.Font = new Font("Microsoft Sans Serif", frequênciaCultoToolStripMenuItem.Font.SizeInPoints * heightRatio * widthRatio);
+
             SetWindowToRole();
         }
 

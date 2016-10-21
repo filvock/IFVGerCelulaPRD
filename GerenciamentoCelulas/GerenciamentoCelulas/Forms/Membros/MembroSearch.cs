@@ -42,6 +42,16 @@ namespace GerenciamentoCelulas.Forms.Membros
 
             membrosBindingSource.Filter = "Igreja = '" + this.igreja + "'";
 
+
+            float widthRatio = Screen.PrimaryScreen.Bounds.Width / 1366F;
+            float heightRatio = Screen.PrimaryScreen.Bounds.Height / 768F;
+            SizeF scale = new SizeF(widthRatio, heightRatio);
+            this.Scale(scale);
+            foreach (Control control in this.Controls)
+            {
+                control.Font = new Font("Microsoft Sans Serif", control.Font.SizeInPoints * heightRatio * widthRatio);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

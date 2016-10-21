@@ -66,3 +66,4 @@ D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Re
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.application
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.exe
 D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.pdb
+D:\drive\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\GerenciamentoCelulas\obj\Release\GerenciamentoCelulas.csprojResolveAssemblyReference.cache

@@ -35,6 +35,15 @@ namespace GerenciamentoCelulas.Forms.Admin
             // TODO: This line of code loads data into the 'igrejafont10DataSet.Igrejas' table. You can move, or remove it, as needed.
             this.igrejasTableAdapter.Fill(this.igrejafont10DataSet.Igrejas);
             cellMembersLabel.Text = igrejasAdminDataGridView.RowCount.ToString();
+
+            float widthRatio = Screen.PrimaryScreen.Bounds.Width / 1366F;
+            float heightRatio = Screen.PrimaryScreen.Bounds.Height / 768F;
+            SizeF scale = new SizeF(widthRatio, heightRatio);
+            this.Scale(scale);
+            foreach (Control control in this.Controls)
+            {
+                control.Font = new Font("Microsoft Sans Serif", control.Font.SizeInPoints * heightRatio * widthRatio);
+            }
         }
 
         private void IgrejasAdminDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

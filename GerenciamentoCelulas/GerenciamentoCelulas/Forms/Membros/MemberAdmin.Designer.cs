@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.MemberAdminClose = new System.Windows.Forms.Button();
             this.MemberAdminAddMember = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.membrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.igrejafont10DataSet = new GerenciamentoCelulas.Igrejafont10DataSet();
             this.membrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -73,25 +72,25 @@
             this.removeMemberButton = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.semDiscCheckBox = new System.Windows.Forms.CheckBox();
-            this.comDiscCheckBox = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.semCelCheckBox = new System.Windows.Forms.CheckBox();
             this.comCelCheckBox = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.celularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.operadoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comDiscCheckBox = new System.Windows.Forms.CheckBox();
+            this.semDiscCheckBox = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Celula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.ativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operadoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource1)).BeginInit();
@@ -101,8 +100,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MemberAdminClose
@@ -126,33 +126,6 @@
             this.MemberAdminAddMember.Text = "Adicionar Membro";
             this.MemberAdminAddMember.UseVisualStyleBackColor = true;
             this.MemberAdminAddMember.Click += new System.EventHandler(this.MemberAdminAddMember_Click);
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.CelName,
-            this.Email,
-            this.cidadeDataGridViewTextBoxColumn,
-            this.uFDataGridViewTextBoxColumn,
-            this.celularDataGridViewTextBoxColumn,
-            this.operadoraDataGridViewTextBoxColumn,
-            this.ativoDataGridViewTextBoxColumn,
-            this.Celula});
-            this.dataGridView.DataSource = this.membrosBindingSource;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView.Location = new System.Drawing.Point(0, 305);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(1127, 382);
-            this.dataGridView.TabIndex = 17;
-            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MemberAdminDataGridView_CellContentDoubleClick);
             // 
             // membrosBindingSource
             // 
@@ -488,35 +461,6 @@
             this.label26.TabIndex = 72;
             this.label26.Text = "S";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.semDiscCheckBox);
-            this.panel1.Controls.Add(this.comDiscCheckBox);
-            this.panel1.Location = new System.Drawing.Point(496, 57);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(51, 19);
-            this.panel1.TabIndex = 71;
-            // 
-            // semDiscCheckBox
-            // 
-            this.semDiscCheckBox.AutoSize = true;
-            this.semDiscCheckBox.Location = new System.Drawing.Point(34, 3);
-            this.semDiscCheckBox.Name = "semDiscCheckBox";
-            this.semDiscCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.semDiscCheckBox.TabIndex = 13;
-            this.semDiscCheckBox.UseVisualStyleBackColor = true;
-            this.semDiscCheckBox.CheckedChanged += new System.EventHandler(this.MemberAdminSemDiscCheckBox_CheckedChanged);
-            // 
-            // comDiscCheckBox
-            // 
-            this.comDiscCheckBox.AutoSize = true;
-            this.comDiscCheckBox.Location = new System.Drawing.Point(3, 3);
-            this.comDiscCheckBox.Name = "comDiscCheckBox";
-            this.comDiscCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.comDiscCheckBox.TabIndex = 12;
-            this.comDiscCheckBox.UseVisualStyleBackColor = true;
-            this.comDiscCheckBox.CheckedChanged += new System.EventHandler(this.comDiscCheckBox_CheckedChanged);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.semCelCheckBox);
@@ -564,69 +508,42 @@
             this.label10.TabIndex = 75;
             this.label10.Text = "Célula";
             // 
-            // codigoDataGridViewTextBoxColumn
+            // comDiscCheckBox
             // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoDataGridViewTextBoxColumn.Width = 90;
+            this.comDiscCheckBox.AutoSize = true;
+            this.comDiscCheckBox.Location = new System.Drawing.Point(3, 3);
+            this.comDiscCheckBox.Name = "comDiscCheckBox";
+            this.comDiscCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.comDiscCheckBox.TabIndex = 12;
+            this.comDiscCheckBox.UseVisualStyleBackColor = true;
+            this.comDiscCheckBox.CheckedChanged += new System.EventHandler(this.comDiscCheckBox_CheckedChanged);
             // 
-            // nomeDataGridViewTextBoxColumn
+            // semDiscCheckBox
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            this.semDiscCheckBox.AutoSize = true;
+            this.semDiscCheckBox.Location = new System.Drawing.Point(34, 3);
+            this.semDiscCheckBox.Name = "semDiscCheckBox";
+            this.semDiscCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.semDiscCheckBox.TabIndex = 13;
+            this.semDiscCheckBox.UseVisualStyleBackColor = true;
+            this.semDiscCheckBox.CheckedChanged += new System.EventHandler(this.MemberAdminSemDiscCheckBox_CheckedChanged);
             // 
-            // CelName
+            // panel1
             // 
-            this.CelName.DataPropertyName = "CelName";
-            this.CelName.HeaderText = "Célula";
-            this.CelName.Name = "CelName";
-            this.CelName.ReadOnly = true;
-            this.CelName.Width = 200;
+            this.panel1.Controls.Add(this.semDiscCheckBox);
+            this.panel1.Controls.Add(this.comDiscCheckBox);
+            this.panel1.Location = new System.Drawing.Point(496, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(51, 19);
+            this.panel1.TabIndex = 71;
             // 
-            // Email
+            // Celula
             // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 250;
-            // 
-            // cidadeDataGridViewTextBoxColumn
-            // 
-            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "Cidade";
-            this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
-            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
-            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cidadeDataGridViewTextBoxColumn.Visible = false;
-            this.cidadeDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // uFDataGridViewTextBoxColumn
-            // 
-            this.uFDataGridViewTextBoxColumn.DataPropertyName = "UF";
-            this.uFDataGridViewTextBoxColumn.HeaderText = "UF";
-            this.uFDataGridViewTextBoxColumn.Name = "uFDataGridViewTextBoxColumn";
-            this.uFDataGridViewTextBoxColumn.ReadOnly = true;
-            this.uFDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // celularDataGridViewTextBoxColumn
-            // 
-            this.celularDataGridViewTextBoxColumn.DataPropertyName = "Celular";
-            this.celularDataGridViewTextBoxColumn.HeaderText = "Celular";
-            this.celularDataGridViewTextBoxColumn.Name = "celularDataGridViewTextBoxColumn";
-            this.celularDataGridViewTextBoxColumn.ReadOnly = true;
-            this.celularDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // operadoraDataGridViewTextBoxColumn
-            // 
-            this.operadoraDataGridViewTextBoxColumn.DataPropertyName = "Operadora";
-            this.operadoraDataGridViewTextBoxColumn.HeaderText = "Operadora";
-            this.operadoraDataGridViewTextBoxColumn.Name = "operadoraDataGridViewTextBoxColumn";
-            this.operadoraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Celula.DataPropertyName = "Celula";
+            this.Celula.HeaderText = "Celula";
+            this.Celula.Name = "Celula";
+            this.Celula.ReadOnly = true;
+            this.Celula.Visible = false;
             // 
             // ativoDataGridViewTextBoxColumn
             // 
@@ -637,13 +554,96 @@
             this.ativoDataGridViewTextBoxColumn.Visible = false;
             this.ativoDataGridViewTextBoxColumn.Width = 50;
             // 
-            // Celula
+            // operadoraDataGridViewTextBoxColumn
             // 
-            this.Celula.DataPropertyName = "Celula";
-            this.Celula.HeaderText = "Celula";
-            this.Celula.Name = "Celula";
-            this.Celula.ReadOnly = true;
-            this.Celula.Visible = false;
+            this.operadoraDataGridViewTextBoxColumn.DataPropertyName = "Operadora";
+            this.operadoraDataGridViewTextBoxColumn.HeaderText = "Operadora";
+            this.operadoraDataGridViewTextBoxColumn.Name = "operadoraDataGridViewTextBoxColumn";
+            this.operadoraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // celularDataGridViewTextBoxColumn
+            // 
+            this.celularDataGridViewTextBoxColumn.DataPropertyName = "Celular";
+            this.celularDataGridViewTextBoxColumn.HeaderText = "Celular";
+            this.celularDataGridViewTextBoxColumn.Name = "celularDataGridViewTextBoxColumn";
+            this.celularDataGridViewTextBoxColumn.ReadOnly = true;
+            this.celularDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // uFDataGridViewTextBoxColumn
+            // 
+            this.uFDataGridViewTextBoxColumn.DataPropertyName = "UF";
+            this.uFDataGridViewTextBoxColumn.HeaderText = "UF";
+            this.uFDataGridViewTextBoxColumn.Name = "uFDataGridViewTextBoxColumn";
+            this.uFDataGridViewTextBoxColumn.ReadOnly = true;
+            this.uFDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cidadeDataGridViewTextBoxColumn
+            // 
+            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
+            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cidadeDataGridViewTextBoxColumn.Visible = false;
+            this.cidadeDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 250;
+            // 
+            // CelName
+            // 
+            this.CelName.DataPropertyName = "CelName";
+            this.CelName.HeaderText = "Célula";
+            this.CelName.Name = "CelName";
+            this.CelName.ReadOnly = true;
+            this.CelName.Width = 200;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToOrderColumns = true;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.CelName,
+            this.Email,
+            this.cidadeDataGridViewTextBoxColumn,
+            this.uFDataGridViewTextBoxColumn,
+            this.celularDataGridViewTextBoxColumn,
+            this.operadoraDataGridViewTextBoxColumn,
+            this.ativoDataGridViewTextBoxColumn,
+            this.Celula});
+            this.dataGridView.DataSource = this.membrosBindingSource;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView.Location = new System.Drawing.Point(0, 311);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(1091, 382);
+            this.dataGridView.TabIndex = 17;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MemberAdminDataGridView_CellContentDoubleClick);
             // 
             // MemberAdmin
             // 
@@ -651,7 +651,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GerenciamentoCelulas.Properties.Resources.Fonte_de_vida_marca_dágua_novo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1127, 687);
+            this.ClientSize = new System.Drawing.Size(1091, 693);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
@@ -689,7 +689,6 @@
             this.Text = "Administração de Membros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MemberAdmin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource1)).EndInit();
@@ -699,10 +698,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -712,7 +712,6 @@
 
         private System.Windows.Forms.Button MemberAdminClose;
         private System.Windows.Forms.Button MemberAdminAddMember;
-        private System.Windows.Forms.DataGridView dataGridView;
         private Igrejafont10DataSet igrejafont10DataSet;
         private System.Windows.Forms.BindingSource membrosBindingSource;
         private Igrejafont10DataSetTableAdapters.MembrosTableAdapter membrosTableAdapter;
@@ -754,23 +753,24 @@
         private System.Windows.Forms.Button removeMemberButton;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox semDiscCheckBox;
-        private System.Windows.Forms.CheckBox comDiscCheckBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox semCelCheckBox;
         private System.Windows.Forms.CheckBox comCelCheckBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CelName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uFDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn celularDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn operadoraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ativoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox semDiscCheckBox;
+        private System.Windows.Forms.CheckBox comDiscCheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ativoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operadoraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn celularDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uFDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CelName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
