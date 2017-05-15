@@ -59,7 +59,7 @@ namespace GerenciamentoCelulas.Forms.Membros
 
         private void MemberAdminAddMember_Click(object sender, EventArgs e)
         {
-            GerenciamentoCelulas.Forms.Membros.MemberAdd newmember = new MemberAdd(0);
+            GerenciamentoCelulas.Forms.Membros.MemberAdd newmember = new MemberAdd(0, igrejaComboBox.SelectedValue.ToString());
             newmember.ShowDialog();
             membrosTableAdapter.FillBy(igrejafont10DataSet.Membros);
             membrosBindingSource.ResetBindings(false);
@@ -399,7 +399,7 @@ namespace GerenciamentoCelulas.Forms.Membros
 
         private void MemberAdminDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            GerenciamentoCelulas.Forms.Membros.MemberAdd newmember = new MemberAdd((int)dataGridView.CurrentRow.Cells[0].Value);
+            GerenciamentoCelulas.Forms.Membros.MemberAdd newmember = new MemberAdd((int)dataGridView.CurrentRow.Cells[0].Value, igrejaComboBox.SelectedValue.ToString());
             newmember.ShowDialog();
             membrosTableAdapter.FillBy(igrejafont10DataSet.Membros);
         }

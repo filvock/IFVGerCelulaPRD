@@ -16,10 +16,12 @@ namespace GerenciamentoCelulas.Forms.Membros
     {
         public int discipCode = 0;
         public int toUpdate = 0;
+        public String igreja = "";
 
-        public MemberAdd(int codeToUpdate){
+        public MemberAdd(int codeToUpdate, String receivedIgreja){
             InitializeComponent();
             toUpdate = codeToUpdate;
+            igreja = receivedIgreja;
         }
 
         private void MemberAdd_Load(object sender, EventArgs e)
@@ -182,7 +184,7 @@ namespace GerenciamentoCelulas.Forms.Membros
                 newmember.EstadoCivil = "";
             }
             newmember.Fone = MemberAddFoneTextBox.Text;
-            newmember.Igreja = login.GetIgreja();
+            newmember.Igreja = igreja;
             newmember.Nome = MemberAddNomeTextBox.Text;
             newmember.Num = MemberAddNumTextBox.Text;
             if (MemberAddOp1ComboBox.SelectedItem != null)
@@ -322,7 +324,7 @@ namespace GerenciamentoCelulas.Forms.Membros
         private void FiltraRedePorIgreja()
         {
             loginInfo info = new loginInfo();
-            redesBindingSource.Filter = "Igreja = '" + info.GetIgreja() + "'";
+            redesBindingSource.Filter = "Igreja = '" + igreja + "'";
             
         }
 
@@ -333,11 +335,11 @@ namespace GerenciamentoCelulas.Forms.Membros
             {
                 if (redeComboBox.SelectedValue != null)
                 {
-                    distritosBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    distritosBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else
                 {
-                    distritosBindingSource.Filter = "Igreja = '" + info.GetIgreja() + "'";
+                    distritosBindingSource.Filter = "Igreja = '" + igreja + "'";
                 }
             }
             else
@@ -353,15 +355,15 @@ namespace GerenciamentoCelulas.Forms.Membros
             {
                 if (distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null)
                 {
-                    areasBindingSource.Filter = "Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    areasBindingSource.Filter = "Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else if (redeComboBox.SelectedValue != null)
                 {
-                    areasBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    areasBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else 
                 {
-                    areasBindingSource.Filter = "Igreja = '" + info.GetIgreja() + "'";
+                    areasBindingSource.Filter = "Igreja = '" + igreja + "'";
                 }
             }
             else
@@ -377,19 +379,19 @@ namespace GerenciamentoCelulas.Forms.Membros
             {
                 if (areaComboBox.SelectedValue != null && distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null)
                 {
-                    setoresBindingSource.Filter = "Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    setoresBindingSource.Filter = "Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else if (distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null)
                 {
-                    setoresBindingSource.Filter = "Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    setoresBindingSource.Filter = "Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else if (redeComboBox.SelectedValue != null)
                 {
-                    setoresBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    setoresBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else 
                 {
-                    setoresBindingSource.Filter = "Igreja = '" + info.GetIgreja() + "'";
+                    setoresBindingSource.Filter = "Igreja = '" + igreja + "'";
                 }
             }
             else
@@ -405,23 +407,23 @@ namespace GerenciamentoCelulas.Forms.Membros
                 loginInfo info = new loginInfo();
                 if (setorComboBox.SelectedValue != null && areaComboBox.SelectedValue != null && distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null)
                 {
-                    celulasBindingSource.Filter = "Setor = '" + setorComboBox.SelectedValue.ToString() + "'" + "AND Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    celulasBindingSource.Filter = "Setor = '" + setorComboBox.SelectedValue.ToString() + "'" + "AND Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else if (areaComboBox.SelectedValue != null && distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null)
                 {
-                    celulasBindingSource.Filter = "Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    celulasBindingSource.Filter = "Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else if (distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null)
                 {
-                    celulasBindingSource.Filter = "Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    celulasBindingSource.Filter = "Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else if (redeComboBox.SelectedValue != null)
                 {
-                    celulasBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + info.GetIgreja() + "'";
+                    celulasBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igreja + "'";
                 }
                 else
                 {
-                    celulasBindingSource.Filter = "Igreja = '" + info.GetIgreja() + "'";
+                    celulasBindingSource.Filter = "Igreja = '" + igreja + "'";
                 }
             }
         }
@@ -560,7 +562,7 @@ namespace GerenciamentoCelulas.Forms.Membros
         private void button1_Click(object sender, EventArgs e)
         {
             loginInfo info = new loginInfo();
-            MembroSearch search = new MembroSearch(info.GetIgreja());
+            MembroSearch search = new MembroSearch(igreja);
 
             search.ShowDialog();
 
