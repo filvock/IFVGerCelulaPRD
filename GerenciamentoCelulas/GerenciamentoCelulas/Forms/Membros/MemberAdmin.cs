@@ -480,7 +480,8 @@ namespace GerenciamentoCelulas.Forms.Membros
                         ((System.ComponentModel.ISupportInitialize)(escadaSucesso)).EndInit();
                         escadaTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.EscadaSucessoTableAdapter();
                         escadaTableAdapter.ClearBeforeFill = true;
-                        
+                        escadaTableAdapter.Fill(this.igrejafont10DataSet.EscadaSucesso);
+
                         membrosBindingSource1.RemoveAt(membrosBindingSource1.Find("Codigo", dataGridView.CurrentRow.Cells[0].Value.ToString()));
                         escadaSucesso.RemoveAt(escadaSucesso.Find("Codigo", dataGridView.CurrentRow.Cells[0].Value.ToString()));
                         membrosBindingSource1.EndEdit();

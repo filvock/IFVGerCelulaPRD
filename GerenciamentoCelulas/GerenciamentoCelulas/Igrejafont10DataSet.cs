@@ -16,6 +16,10 @@
 
 namespace GerenciamentoCelulas.Igrejafont10DataSetTableAdapters
 {
+    partial class MembrosTableAdapter
+    {
+    }
+
     partial class CelulasTableAdapter
     {
     }

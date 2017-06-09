@@ -81,11 +81,11 @@ namespace GerenciamentoCelulas.Forms.Membros
             else MemberAddFRadioButton.Checked = true;
             MemberAddEmailTextBox.Text = row["Email"].ToString();
             MemberAddEstadoCivilComboBox.SelectedItem = row["EstadoCivil"].ToString();
-            redeComboBox.SelectedValue = row["Rede"];
-            distritoComboBox.SelectedValue = row["Distrito"];
-            areaComboBox.SelectedValue = row["Area"];
-            setorComboBox.SelectedValue = row["Setor"];
-            celulaComboBox.SelectedValue = row["Celula"];
+            if (!row["Rede"].ToString().Equals("")) redeComboBox.SelectedValue = row["Rede"]; else redeCheckBox.Checked = true;
+            if (!row["Distrito"].ToString().Equals("")) distritoComboBox.SelectedValue = row["Distrito"]; else distritoCheckBox.Checked = true;
+            if (!row["Area"].ToString().Equals("")) areaComboBox.SelectedValue = row["Area"]; else areaCheckBox.Checked = true;
+            if (!row["Setor"].ToString().Equals("")) setorComboBox.SelectedValue = row["Setor"]; else setorCheckBox.Checked = true;
+            if (!row["Celula"].ToString().Equals("")) celulaComboBox.SelectedValue = row["Celula"]; else celulaCheckBox.Checked = true;
             discipCode = Int32.Parse(row["Discipulador"].ToString());
             
             if (discipCode != 0)
@@ -143,7 +143,14 @@ namespace GerenciamentoCelulas.Forms.Membros
             else row["Sexo"] = "F";
             row["Email"] = MemberAddEmailTextBox.Text;
             row["EstadoCivil"] = MemberAddEstadoCivilComboBox.SelectedItem;
-            row["Celula"] = celulaComboBox.SelectedValue;
+
+            if (redeComboBox.SelectedValue != null) if (!redeComboBox.SelectedValue.ToString().Equals("")) row["Rede"] = redeComboBox.SelectedValue;
+            if (distritoComboBox.SelectedValue != null) if (!distritoComboBox.SelectedValue.ToString().Equals("")) row["Distrito"] = distritoComboBox.SelectedValue;
+            if (areaComboBox.SelectedValue != null) if (!areaComboBox.SelectedValue.ToString().Equals("")) row["Area"] = areaComboBox.SelectedValue;
+            if (setorComboBox.SelectedValue != null) if (!setorComboBox.SelectedValue.ToString().Equals("")) row["Setor"] = setorComboBox.SelectedValue;
+            if (celulaComboBox.SelectedValue != null) if (!celulaComboBox.SelectedValue.ToString().Equals("")) row["Celula"] = celulaComboBox.SelectedValue;
+
+
             row["Discipulador"] = discipCode.ToString();
 
             membrosBindingSource1.EndEdit();
