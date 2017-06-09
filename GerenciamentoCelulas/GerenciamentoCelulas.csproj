@@ -26,8 +26,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/filvock/IFVGerCelulaPRD/tree/master/GerenciamentoCelulas/GerenciamentoCelulas/Publish/</InstallUrl>
-    <UpdateUrl>https://raw.githubusercontent.com/filvock/IFVGerCelulaPRD/tree/master/GerenciamentoCelulas/GerenciamentoCelulas/Publish/</UpdateUrl>
+    <InstallUrl>https://raw.githubusercontent.com/filvock/IFVGerCelulaPRD/master/GerenciamentoCelulas/Publish/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/filvock/IFVGerCelulaPRD/master/GerenciamentoCelulas/Publish/</UpdateUrl>
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>IFV Gerenciamento de Células</ProductName>
     <PublisherName>IFV</PublisherName>

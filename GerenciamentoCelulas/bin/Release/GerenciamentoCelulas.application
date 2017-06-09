@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="https://raw.githubusercontent.com/filvock/IFVGerCelulaPRD/tree/master/GerenciamentoCelulas/GerenciamentoCelulas/Publish/GerenciamentoCelulas.application" />
+    <deploymentProvider codebase="https://raw.githubusercontent.com/filvock/IFVGerCelulaPRD/master/GerenciamentoCelulas/Publish/GerenciamentoCelulas.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
@@ -21,7 +21,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MROzinumb+jKkaHhC1oDUKHjFig2d6sBMPIIQiAggzE=</dsig:DigestValue>
+        <dsig:DigestValue>WV2grZkKB+glpRcoLfV4B7Bn+wOY5z4765C2Hmty1do=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
