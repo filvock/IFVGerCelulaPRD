@@ -337,6 +337,7 @@
             // 
             this.celulaComboBox.DataSource = this.celulasBindingSource;
             this.celulaComboBox.DisplayMember = "Nome";
+            this.celulaComboBox.Enabled = false;
             this.celulaComboBox.FormattingEnabled = true;
             this.celulaComboBox.Location = new System.Drawing.Point(511, 556);
             this.celulaComboBox.Name = "celulaComboBox";
@@ -358,6 +359,7 @@
             // 
             this.setorComboBox.DataSource = this.setoresBindingSource;
             this.setorComboBox.DisplayMember = "Nome";
+            this.setorComboBox.Enabled = false;
             this.setorComboBox.FormattingEnabled = true;
             this.setorComboBox.Location = new System.Drawing.Point(511, 518);
             this.setorComboBox.Name = "setorComboBox";
@@ -375,6 +377,7 @@
             // 
             this.areaComboBox.DataSource = this.areasBindingSource;
             this.areaComboBox.DisplayMember = "Nome";
+            this.areaComboBox.Enabled = false;
             this.areaComboBox.FormattingEnabled = true;
             this.areaComboBox.Location = new System.Drawing.Point(69, 592);
             this.areaComboBox.Name = "areaComboBox";
@@ -392,6 +395,7 @@
             // 
             this.distritoComboBox.DataSource = this.distritosBindingSource;
             this.distritoComboBox.DisplayMember = "Nome";
+            this.distritoComboBox.Enabled = false;
             this.distritoComboBox.FormattingEnabled = true;
             this.distritoComboBox.Location = new System.Drawing.Point(69, 553);
             this.distritoComboBox.Name = "distritoComboBox";
@@ -409,6 +413,7 @@
             // 
             this.redeComboBox.DataSource = this.redesBindingSource;
             this.redeComboBox.DisplayMember = "Nome";
+            this.redeComboBox.Enabled = false;
             this.redeComboBox.FormattingEnabled = true;
             this.redeComboBox.Location = new System.Drawing.Point(69, 518);
             this.redeComboBox.Name = "redeComboBox";
@@ -775,6 +780,8 @@
             // distritoCheckBox
             // 
             this.distritoCheckBox.AutoSize = true;
+            this.distritoCheckBox.Checked = true;
+            this.distritoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.distritoCheckBox.Location = new System.Drawing.Point(424, 562);
             this.distritoCheckBox.Name = "distritoCheckBox";
             this.distritoCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -785,6 +792,8 @@
             // areaCheckBox
             // 
             this.areaCheckBox.AutoSize = true;
+            this.areaCheckBox.Checked = true;
+            this.areaCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.areaCheckBox.Location = new System.Drawing.Point(424, 601);
             this.areaCheckBox.Name = "areaCheckBox";
             this.areaCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -795,6 +804,8 @@
             // setorCheckBox
             // 
             this.setorCheckBox.AutoSize = true;
+            this.setorCheckBox.Checked = true;
+            this.setorCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.setorCheckBox.Location = new System.Drawing.Point(867, 527);
             this.setorCheckBox.Name = "setorCheckBox";
             this.setorCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -805,6 +816,8 @@
             // redeCheckBox
             // 
             this.redeCheckBox.AutoSize = true;
+            this.redeCheckBox.Checked = true;
+            this.redeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.redeCheckBox.Location = new System.Drawing.Point(424, 527);
             this.redeCheckBox.Name = "redeCheckBox";
             this.redeCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -815,6 +828,8 @@
             // celulaCheckBox
             // 
             this.celulaCheckBox.AutoSize = true;
+            this.celulaCheckBox.Checked = true;
+            this.celulaCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.celulaCheckBox.Location = new System.Drawing.Point(867, 565);
             this.celulaCheckBox.Name = "celulaCheckBox";
             this.celulaCheckBox.Size = new System.Drawing.Size(15, 14);

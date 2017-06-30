@@ -37,6 +37,30 @@ namespace GerenciamentoCelulas.Forms.Membros
             
             FiltraRedePorIgreja();
 
+            redesBindingSource.Filter = "";
+            redeComboBox.SelectedIndex = -1;
+            redeComboBox.Enabled = false;
+
+            distritosBindingSource.Filter = "";
+            distritoComboBox.SelectedIndex = -1;
+            distritoComboBox.Enabled = false;
+            distritoCheckBox.Checked = true;
+
+            areasBindingSource.Filter = "";
+            areaComboBox.SelectedIndex = -1;
+            areaComboBox.Enabled = false;
+            areaCheckBox.Checked = true;
+
+            setoresBindingSource.Filter = "";
+            setorComboBox.SelectedIndex = -1;
+            setorComboBox.Enabled = false;
+            setorCheckBox.Checked = true;
+
+            celulasBindingSource.Filter = "";
+            celulaComboBox.SelectedIndex = -1;
+            celulaComboBox.Enabled = false;
+            celulaCheckBox.Checked = true;
+
             if (toUpdate != 0)
             {
                 FillUserInfo();
@@ -211,14 +235,47 @@ namespace GerenciamentoCelulas.Forms.Membros
             newmember.UF = MemberAddEstadoComboBox.SelectedValue.ToString();
 
 
-            newmember.Rede = "";
-            newmember.Distrito = "";
-            newmember.Area = "";
-            newmember.Setor = "";
-            if (celulaComboBox.SelectedValue != null && celulaComboBox.SelectedValue.ToString().Length != 0)
-                newmember.Celula = celulaComboBox.SelectedValue.ToString();
-            else newmember.Celula = "0";
+            if (redeCheckBox.Checked == false) newmember.Rede = "";
+            else
+            {
+                if (redeComboBox.SelectedValue != null && redeComboBox.SelectedValue.ToString().Length != 0)
+                    newmember.Rede = redeComboBox.SelectedItem.ToString();
+                else
+                    newmember.Rede = "";
+            }
+            if (distritoCheckBox.Checked == false) newmember.Distrito = "";
+            else
+            {
+                if (distritoComboBox.SelectedValue != null && distritoComboBox.SelectedValue.ToString().Length != 0)
+                    newmember.Distrito = distritoComboBox.SelectedItem.ToString();
+                else
+                    newmember.Distrito = "";
+            }
+            if (areaCheckBox.Checked == false) newmember.Area = "";
+            else
+            {
+                if (areaComboBox.SelectedValue != null && areaComboBox.SelectedValue.ToString().Length != 0)
+                    newmember.Area = areaComboBox.SelectedItem.ToString();
+                else
+                    newmember.Area = "";
+            }
+            if (setorCheckBox.Checked == false) newmember.Setor = "";
+            else
+            {
+                if (setorComboBox.SelectedValue != null && setorComboBox.SelectedValue.ToString().Length != 0)
+                    newmember.Setor = setorComboBox.SelectedItem.ToString();
+                else
+                    newmember.Setor = "";
+            }
+            if (celulaCheckBox.Checked == false) newmember.Celula = "0";
+            else
+            {
+                if (celulaComboBox.SelectedValue != null && celulaComboBox.SelectedValue.ToString().Length != 0)
+                    newmember.Celula = celulaComboBox.SelectedValue.ToString();
+                else newmember.Celula = "0";
+            }
             
+
             igrejafont10DataSet.Membros1.Rows.Add(newmember);
             membrosBindingSource1.EndEdit();
             membrosTableAdapter1.Update(igrejafont10DataSet.Membros1);
