@@ -358,6 +358,7 @@ namespace GerenciamentoCelulas.Forms.Membros
             areaComboBox.SelectedItem = -1;
             setorComboBox.SelectedItem = -1;
             celulaComboBox.SelectedItem = -1;
+            discipCode = 0;
         }
 
         private void MemberAddCancelButton_Click(object sender, EventArgs e)

@@ -30,21 +30,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MemberAdminClose = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frequenciaCelula11BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.membrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.igrejafont10DataSet = new GerenciamentoCelulas.Igrejafont10DataSet();
+            this.frequenciaCelula11BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,7 +84,6 @@
             this.redesTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.RedesTableAdapter();
             this.igrejasTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.IgrejasTableAdapter();
             this.membrosTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.MembrosTableAdapter();
-            this.membrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.frequenciaCelula1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.frequenciaCelula1TableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.FrequenciaCelula1TableAdapter();
             this.label10 = new System.Windows.Forms.Label();
@@ -110,9 +103,17 @@
             this.label23 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label24 = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frequenciaCelula11BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frequenciaCelula11BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redesBindingSource)).BeginInit();
@@ -120,7 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frequenciaCelula1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -144,14 +144,14 @@
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIdDataGridViewTextBoxColumn,
+            this.Codigo,
             this.nomeDataGridViewTextBoxColumn,
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView.DataSource = this.frequenciaCelula11BindingSource;
+            this.dataGridView.DataSource = this.membrosBindingSource;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView.Location = new System.Drawing.Point(0, 322);
             this.dataGridView.Name = "dataGridView";
@@ -159,68 +159,20 @@
             this.dataGridView.Size = new System.Drawing.Size(1354, 382);
             this.dataGridView.TabIndex = 43;
             // 
-            // userIdDataGridViewTextBoxColumn
+            // membrosBindingSource
             // 
-            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.userIdDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-            this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.userIdDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Sm 1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Sm 2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 50;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Sm 3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 50;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Sm 4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 50;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Sm 5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 50;
-            // 
-            // frequenciaCelula11BindingSource
-            // 
-            this.frequenciaCelula11BindingSource.DataMember = "FrequenciaCelula11";
-            this.frequenciaCelula11BindingSource.DataSource = this.igrejafont10DataSet;
+            this.membrosBindingSource.DataMember = "Membros";
+            this.membrosBindingSource.DataSource = this.igrejafont10DataSet;
             // 
             // igrejafont10DataSet
             // 
             this.igrejafont10DataSet.DataSetName = "Igrejafont10DataSet";
             this.igrejafont10DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // frequenciaCelula11BindingSource
+            // 
+            this.frequenciaCelula11BindingSource.DataMember = "FrequenciaCelula11";
+            this.frequenciaCelula11BindingSource.DataSource = this.igrejafont10DataSet;
             // 
             // bindingSource1
             // 
@@ -586,11 +538,6 @@
             // 
             this.membrosTableAdapter.ClearBeforeFill = true;
             // 
-            // membrosBindingSource
-            // 
-            this.membrosBindingSource.DataMember = "Membros";
-            this.membrosBindingSource.DataSource = this.igrejafont10DataSet;
-            // 
             // frequenciaCelula1BindingSource
             // 
             this.frequenciaCelula1BindingSource.DataMember = "FrequenciaCelula1";
@@ -739,20 +686,20 @@
             // 
             // chart1
             // 
-            chartArea2.Area3DStyle.Enable3D = true;
-            chartArea2.Name = "ChartArea7";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Alignment = System.Drawing.StringAlignment.Far;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Name = "ChartArea7";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Far;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(675, 322);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea7";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.CustomProperties = "PieLineColor=Black, PieDrawingStyle=SoftEdge, PieLabelStyle=Outside";
-            series2.Legend = "Legend1";
-            series2.Name = "Data";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea7";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.CustomProperties = "PieLineColor=Black, PieDrawingStyle=SoftEdge, PieLabelStyle=Outside";
+            series1.Legend = "Legend1";
+            series1.Name = "Data";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(676, 382);
             this.chart1.TabIndex = 62;
             this.chart1.Text = "chart1";
@@ -766,6 +713,58 @@
             this.label24.Size = new System.Drawing.Size(92, 13);
             this.label24.TabIndex = 63;
             this.label24.Text = "NL: Não Lançado";
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.nomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Sm 1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Sm 2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 50;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Sm 3";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 50;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Sm 4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 50;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Sm 5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 50;
             // 
             // CellFrequency
             // 
@@ -821,8 +820,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MemberAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frequenciaCelula11BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frequenciaCelula11BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redesBindingSource)).EndInit();
@@ -830,7 +830,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frequenciaCelula1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
@@ -909,7 +908,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

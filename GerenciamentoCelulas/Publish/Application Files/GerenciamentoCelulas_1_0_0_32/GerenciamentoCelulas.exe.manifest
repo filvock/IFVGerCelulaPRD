@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GerenciamentoCelulas.exe" size="1233408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GerenciamentoCelulas.exe" size="1164288">
       <assemblyIdentity name="GerenciamentoCelulas" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3STOsthkOUa1eU3R3I0S82B9NWsx00vndS7qCfepDJ8=</dsig:DigestValue>
+        <dsig:DigestValue>ffar1r1Mb7XoEZ1kSmRYqwfBKubZUZ8xnBkaM0S55gg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
