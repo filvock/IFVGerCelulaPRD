@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cidadesAdminEditButton = new System.Windows.Forms.Button();
             this.cidadesAdminAddButton = new System.Windows.Forms.Button();
             this.cidadesAdminRemoveButton = new System.Windows.Forms.Button();
@@ -44,13 +47,13 @@
             this.estadosTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.EstadosTableAdapter();
             this.cidadesAdminTextBox = new System.Windows.Forms.TextBox();
             this.cidadesAdminDataGridView = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidadesTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.CidadesTableAdapter();
             this.igrejasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.igrejasTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.IgrejasTableAdapter();
             this.cellMembersLabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cidadesBindingSource)).BeginInit();
@@ -97,7 +100,7 @@
             this.cidadesAdminSaveButton.Location = new System.Drawing.Point(567, 241);
             this.cidadesAdminSaveButton.Name = "cidadesAdminSaveButton";
             this.cidadesAdminSaveButton.Size = new System.Drawing.Size(145, 42);
-            this.cidadesAdminSaveButton.TabIndex = 3;
+            this.cidadesAdminSaveButton.TabIndex = 5;
             this.cidadesAdminSaveButton.Text = "Salvar";
             this.cidadesAdminSaveButton.UseVisualStyleBackColor = true;
             this.cidadesAdminSaveButton.Click += new System.EventHandler(this.cidadeAdminSaveButton_Click);
@@ -108,7 +111,7 @@
             this.cidadesAdminCancelButton.Location = new System.Drawing.Point(718, 241);
             this.cidadesAdminCancelButton.Name = "cidadesAdminCancelButton";
             this.cidadesAdminCancelButton.Size = new System.Drawing.Size(145, 42);
-            this.cidadesAdminCancelButton.TabIndex = 4;
+            this.cidadesAdminCancelButton.TabIndex = 6;
             this.cidadesAdminCancelButton.Text = "Cancel";
             this.cidadesAdminCancelButton.UseVisualStyleBackColor = true;
             this.cidadesAdminCancelButton.Click += new System.EventHandler(this.cidadeAdminCancelButton_Click);
@@ -142,7 +145,7 @@
             this.cidadesAdminComboBox.Location = new System.Drawing.Point(451, 116);
             this.cidadesAdminComboBox.Name = "cidadesAdminComboBox";
             this.cidadesAdminComboBox.Size = new System.Drawing.Size(113, 32);
-            this.cidadesAdminComboBox.TabIndex = 14;
+            this.cidadesAdminComboBox.TabIndex = 4;
             this.cidadesAdminComboBox.ValueMember = "Sigla";
             // 
             // estadosBindingSource
@@ -170,7 +173,7 @@
             this.cidadesAdminTextBox.Location = new System.Drawing.Point(13, 119);
             this.cidadesAdminTextBox.Name = "cidadesAdminTextBox";
             this.cidadesAdminTextBox.Size = new System.Drawing.Size(432, 29);
-            this.cidadesAdminTextBox.TabIndex = 15;
+            this.cidadesAdminTextBox.TabIndex = 3;
             // 
             // cidadesAdminDataGridView
             // 
@@ -178,42 +181,34 @@
             this.cidadesAdminDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cidadesAdminDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cidadesAdminDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.cidadesAdminDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cidadesAdminDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.estadoDataGridViewTextBoxColumn});
             this.cidadesAdminDataGridView.DataSource = this.cidadesBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cidadesAdminDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cidadesAdminDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.cidadesAdminDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.cidadesAdminDataGridView.Location = new System.Drawing.Point(12, 289);
             this.cidadesAdminDataGridView.Name = "cidadesAdminDataGridView";
             this.cidadesAdminDataGridView.ReadOnly = true;
             this.cidadesAdminDataGridView.Size = new System.Drawing.Size(868, 330);
-            this.cidadesAdminDataGridView.TabIndex = 16;
+            this.cidadesAdminDataGridView.TabIndex = 7;
             this.cidadesAdminDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CidadeAdminDataGridView_CellClick);
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 300;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Width = 200;
             // 
             // cidadesTableAdapter
             // 
@@ -248,6 +243,26 @@
             this.label15.Size = new System.Drawing.Size(212, 26);
             this.label15.TabIndex = 46;
             this.label15.Text = "Número de Cidades:";
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 300;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.estadoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Width = 200;
             // 
             // cidadesAdmin
             // 
@@ -301,9 +316,9 @@
         private Igrejafont10DataSetTableAdapters.CidadesTableAdapter cidadesTableAdapter;
         private System.Windows.Forms.BindingSource igrejasBindingSource;
         private Igrejafont10DataSetTableAdapters.IgrejasTableAdapter igrejasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label cellMembersLabel;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
     }
 }

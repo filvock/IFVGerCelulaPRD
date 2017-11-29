@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciamentoCelulas.Forms.Membros
+namespace GerenciamentoCelulas.Forms.Reports
 {
-    public partial class MemberAdmin : Form
+    public partial class ServiceFrequency : Form
     {
-        public MemberAdmin()
+        public ServiceFrequency()
         {
             InitializeComponent();
-
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM/yyyy";
         }
 
         private void MemberAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'igrejafont10DataSet.FrequenciaCulto11' table. You can move, or remove it, as needed.
+            this.frequenciaCulto11TableAdapter.FillByDistinct(this.igrejafont10DataSet.FrequenciaCulto11);
+            this.frequenciaCulto1TableAdapter.FillBy(this.igrejafont10DataSet.FrequenciaCulto1);
+            
             this.celulasTableAdapter.FillBy(this.igrejafont10DataSet.Celulas);
             this.setoresTableAdapter.FillBy(this.igrejafont10DataSet.Setores);
             this.areasTableAdapter.FillBy(this.igrejafont10DataSet.Areas);
@@ -27,7 +32,50 @@ namespace GerenciamentoCelulas.Forms.Membros
             this.redesTableAdapter.Fill(this.igrejafont10DataSet.Redes);
             this.igrejasTableAdapter.Fill(this.igrejafont10DataSet.Igrejas);
             this.membrosTableAdapter.FillBy(this.igrejafont10DataSet.Membros);
-            this.membrosTableAdapter1.Fill(this.igrejafont10DataSet.Membros1);
+            
+            loginInfo login = new loginInfo(); 
+
+            igrejaComboBox.SelectedValue = login.GetIgreja();
+
+
+            if (login.GetRole().Equals("Igreja Local"))
+            {
+                igrejaComboBox.SelectedValue = login.GetIgreja(); 
+                igrejaComboBox.Enabled = false;
+            }
+
+            redesBindingSource.Filter = "";
+            redeComboBox.SelectedIndex = -1;
+            redeComboBox.Enabled = false;
+
+            distritosBindingSource.Filter = "";
+            distritoComboBox.SelectedIndex = -1;
+            distritoComboBox.Enabled = false;
+            distritoCheckBox.Checked = true;
+
+            areasBindingSource.Filter = "";
+            areaComboBox.SelectedIndex = -1;
+            areaComboBox.Enabled = false;
+            areaCheckBox.Checked = true;
+
+            setoresBindingSource.Filter = "";
+            setorComboBox.SelectedIndex = -1;
+            setorComboBox.Enabled = false;
+            setorCheckBox.Checked = true;
+
+            celulasBindingSource.Filter = "";
+            celulaComboBox.SelectedIndex = -1;
+            celulaComboBox.Enabled = false;
+            celulaCheckBox.Checked = true;
+
+            FiltraMembros();
+
+            this.dataGridView.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
 
             float widthRatio = Screen.PrimaryScreen.Bounds.Width / 1366F;
             float heightRatio = Screen.PrimaryScreen.Bounds.Height / 768F;
@@ -38,32 +86,11 @@ namespace GerenciamentoCelulas.Forms.Membros
                 control.Font = new Font("Microsoft Sans Serif", control.Font.SizeInPoints * heightRatio * widthRatio);
             }
 
-            loginInfo login = new loginInfo();
-            igrejaComboBox.SelectedValue = login.GetIgreja();
-
-            if (login.GetRole().Equals("Igreja Local"))
-            {
-                igrejaComboBox.SelectedValue = login.GetIgreja(); 
-                igrejaComboBox.Enabled = false;
-            }
-
-            FiltraCheckBox();
-            cellMembersLabel.Text = dataGridView.RowCount.ToString();
         }
 
         private void MemberAdminClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-
-        private void MemberAdminAddMember_Click(object sender, EventArgs e)
-        {
-            GerenciamentoCelulas.Forms.Membros.MemberAdd newmember = new MemberAdd(0, igrejaComboBox.SelectedValue.ToString());
-            newmember.ShowDialog();
-            membrosTableAdapter.FillBy(igrejafont10DataSet.Membros);
-            membrosBindingSource.ResetBindings(false);
-            FiltraMembros();
         }
 
         private void igrejaComboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -112,8 +139,7 @@ namespace GerenciamentoCelulas.Forms.Membros
             }
         }
 
-
-
+        
         private void FiltraDistritoPorRede()
         {
             if (distritoCheckBox.Checked == false)
@@ -244,21 +270,103 @@ namespace GerenciamentoCelulas.Forms.Membros
             }
 
             cellMembersLabel.Text = dataGridView.RowCount.ToString();
-
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                if (row.Cells[2].Value.ToString() == "0")
-                    row.Cells[2].Value = "Sem Célula";
-            }
+            SetFrequencyData();
+            
         }
+
+        private void SetFrequencyData()
+        {
+            foreach (DataGridViewRow myRow in dataGridView.Rows)
+            {              
+                myRow.Cells[2].Value = "";
+                myRow.Cells[3].Value = "";
+                myRow.Cells[4].Value = "";
+                myRow.Cells[5].Value = "";
+                myRow.Cells[6].Value = "";
+            }
+            
+            var firstDayOfMonth = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, 1);
+            var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+            frequenciaCulto1BindingSource.Filter = "Data >= '" + firstDayOfMonth + "' AND Data <= '" + lastDayOfMonth + "'";
+                        
+            if (frequenciaCulto1BindingSource.Count > 0)
+            {
+                int count = frequenciaCulto1BindingSource.Count;
+                frequenciaCulto1BindingSource.MoveFirst();
+                int s = 0, n = 0, pi = 0, r = 0, aa = 0, o = 0, nl = 0;
+
+                for (int i = 0; i <= count; i++)
+                {
+                    DataRowView row = (DataRowView)frequenciaCulto1BindingSource.Current;
+
+                    int j = 0;
+                    bool notFound = true;
+
+                    while (notFound && j <dataGridView.Rows.Count)
+                    {
+                        if (dataGridView.Rows[j].Cells[0].Value.ToString().Equals(row[1].ToString()))
+                        {
+                            notFound = false;
+                            int dia = Convert.ToInt32(row[4].ToString().Substring(0, 2));
+                            int week = Convert.ToInt32((1 + (dia / 7)).ToString("0"));
+
+                                
+                                if (row[3].ToString().Equals("0"))
+                                {
+                                    dataGridView.Rows[j].Cells[week + 1].Value = "N";
+                                    n++;
+                                }
+                                else if (row[3].ToString().Equals("1"))
+                                {
+                                    dataGridView.Rows[j].Cells[week + 1].Value = "S";
+                                    s++;
+                                }
+                                else if (row[3].ToString().Equals("2"))
+                                {
+                                    dataGridView.Rows[j].Cells[week + 1].Value = "PI";
+                                    pi++;
+                                }
+                                else if (row[3].ToString().Equals("3"))
+                                {
+                                    dataGridView.Rows[j].Cells[week + 1].Value = "R";
+                                    r++;
+                                }
+                                else if (row[3].ToString().Equals("4"))
+                                {
+                                    dataGridView.Rows[j].Cells[week + 1].Value = "AA";
+                                    aa++;
+                                }
+                                else if (row[3].ToString().Equals("5"))
+                                {
+                                    dataGridView.Rows[j].Cells[week + 1].Value = "O";
+                                    o++;
+                                }                                
+                        }
+                        j++;
+                    }
+                    frequenciaCulto1BindingSource.MoveNext();
+                }
+
+                nl = dataGridView.Rows.Count  * 5 - s - n - pi - r - aa - o;
+
+                double[] yValues = {s,n,pi,r,aa,o,nl};
+                String[] xValues = { "S", "N", "PI", "R", "AA", "O", "NL" };
+                    
+                chart1.Series["Data"].Points.DataBindXY(xValues, yValues);
+                chart1.Series["Data"].LegendText = "#AXISLABEL - #PERCENT" ;
+
+            }
+            
+        }
+
+        private void SetWeekValue(String week, DataRowView row)
+        {
+           
+        }
+
 
         private void redeCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            FiltraCheckBox();
-
-        }
-
-        private void FiltraCheckBox()
         {
             if (redeCheckBox.Checked == true)
             {
@@ -296,6 +404,7 @@ namespace GerenciamentoCelulas.Forms.Membros
                 redeComboBox.Enabled = true;
 
             }
+
         }
 
         private void distritoCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -378,6 +487,7 @@ namespace GerenciamentoCelulas.Forms.Membros
                 celulaCheckBox.Checked = true;
 
                 FiltraMembros();
+
             }
             else
             {
@@ -403,109 +513,9 @@ namespace GerenciamentoCelulas.Forms.Membros
             }
         }
 
-        private void MemberAdminDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            GerenciamentoCelulas.Forms.Membros.MemberAdd newmember = new MemberAdd((int)dataGridView.CurrentRow.Cells[0].Value, igrejaComboBox.SelectedValue.ToString());
-            newmember.ShowDialog();
-            membrosTableAdapter.FillBy(igrejafont10DataSet.Membros);
-        }
-
-        private void comCelCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (comCelCheckBox.Checked)
-            {
-                membrosBindingSource.Filter = membrosBindingSource.Filter + " AND Celula<>'0'";
-                cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            }
-            else
-            {
-                membrosBindingSource.Filter = membrosBindingSource.Filter.Replace(" AND Celula<>'0'", "");
-                cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            }
-
-        }
-
-        private void MemberAdminSemCelCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (semCelCheckBox.Checked)
-            {
-                membrosBindingSource.Filter = membrosBindingSource.Filter + " AND Celula='0'";
-                cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            }
-            else
-            {
-                membrosBindingSource.Filter = membrosBindingSource.Filter.Replace(" AND Celula='0'", "");
-                cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            }
-        }
-
-        private void comDiscCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (comDiscCheckBox.Checked)
-            {
-                membrosBindingSource.Filter = membrosBindingSource.Filter + " AND Discipulador<>'0'";
-                cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            }
-            else
-            {
-                membrosBindingSource.Filter = membrosBindingSource.Filter.Replace(" AND Discipulador<>'0'", "");
-                cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            }
-
-        }
-
-        private void MemberAdminSemDiscCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (semDiscCheckBox.Checked)
-            {
-                membrosBindingSource.Filter = membrosBindingSource.Filter + " AND Discipulador='0'";
-                cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            }
-            else
-            {
-                membrosBindingSource.Filter = membrosBindingSource.Filter.Replace(" AND Discipulador='0'", "");
-                cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            }
-        }
-
-        private void removeMemberButton_Click(object sender, EventArgs e)
-        {
-            if (dataGridView.CurrentRow.Cells[0].Value.ToString().Length > 0)
-            {
-                DialogResult result = MessageBox.Show("Deseja remover o membro: " + dataGridView.CurrentRow.Cells[1].Value.ToString(), "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    try
-                    {
-                        System.Windows.Forms.BindingSource escadaSucesso;
-                        Igrejafont10DataSetTableAdapters.EscadaSucessoTableAdapter escadaTableAdapter;
-                        escadaSucesso = new System.Windows.Forms.BindingSource(this.components);
-                        ((System.ComponentModel.ISupportInitialize)(escadaSucesso)).BeginInit();
-                        escadaSucesso.DataMember = "EscadaSucesso";
-                        escadaSucesso.DataSource = this.igrejafont10DataSet;
-                        ((System.ComponentModel.ISupportInitialize)(escadaSucesso)).EndInit();
-                        escadaTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.EscadaSucessoTableAdapter();
-                        escadaTableAdapter.ClearBeforeFill = true;
-                        escadaTableAdapter.Fill(this.igrejafont10DataSet.EscadaSucesso);
-
-                        membrosBindingSource1.RemoveAt(membrosBindingSource1.Find("Codigo", dataGridView.CurrentRow.Cells[0].Value.ToString()));
-                        escadaSucesso.RemoveAt(escadaSucesso.Find("Codigo", dataGridView.CurrentRow.Cells[0].Value.ToString()));
-                        membrosBindingSource1.EndEdit();
-                        membrosTableAdapter1.Update(igrejafont10DataSet.Membros1);
-                        escadaSucesso.EndEdit();
-                        escadaTableAdapter.Update(igrejafont10DataSet.EscadaSucesso);
-                        
-                        membrosTableAdapter.FillBy(igrejafont10DataSet.Membros);
-                        cellMembersLabel.Text = dataGridView.RowCount.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Update failed /n" + ex.ToString());
-                    }
-            }
-            }
-            else
-                MessageBox.Show("Selecione um membro para ser removido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SetFrequencyData();
         }
     }
 }

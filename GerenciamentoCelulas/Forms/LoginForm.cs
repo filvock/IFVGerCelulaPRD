@@ -30,6 +30,10 @@ namespace GerenciamentoCelulas.Forms
                 control.Font = new Font("Microsoft Sans Serif", control.Font.SizeInPoints * heightRatio * widthRatio);
             }
             versionLabel.Text = "Version: " + Application.ProductVersion;
+
+            this.ClientSize = new System.Drawing.Size(701, 343);
+            this.loginFormOkButton.Location = new System.Drawing.Point(438, 286);
+            this.loginFormCancelButton.Location = new System.Drawing.Point(568, 286);
         }
 
 

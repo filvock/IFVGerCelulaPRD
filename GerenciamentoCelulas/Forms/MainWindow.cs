@@ -201,6 +201,12 @@ namespace GerenciamentoCelulas.Forms
             GerenciamentoCelulas.Forms.Reports.CellFrequency window = new Reports.CellFrequency();
             window.Show();
         }
+
+        private void frequênciaCultoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GerenciamentoCelulas.Forms.Reports.ServiceFrequency window = new Reports.ServiceFrequency();
+            window.Show();
+        }
     }
 
            

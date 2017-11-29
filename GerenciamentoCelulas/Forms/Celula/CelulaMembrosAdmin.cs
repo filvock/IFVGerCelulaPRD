@@ -292,6 +292,12 @@ namespace GerenciamentoCelulas.Forms.Celula
                 membrosBindingSource.Filter = "Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
             }
             cellMembersLabel.Text = dataGridView.RowCount.ToString();
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (row.Cells[2].Value.ToString() == "0")
+                    row.Cells[2].Value = "Sem Célula";
+            }
         }
 
         private void redeCheckBox_CheckedChanged(object sender, EventArgs e)

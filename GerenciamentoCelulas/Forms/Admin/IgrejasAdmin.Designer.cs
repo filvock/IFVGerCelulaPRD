@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.igrejasAdminEditButton = new System.Windows.Forms.Button();
             this.igrejasAdminAddButton = new System.Windows.Forms.Button();
             this.igrejasAdminRemoveButton = new System.Windows.Forms.Button();
@@ -42,9 +46,6 @@
             this.igrejafont10DataSet = new GerenciamentoCelulas.Igrejafont10DataSet();
             this.igrejasAdminTextBox = new System.Windows.Forms.TextBox();
             this.igrejasAdminDataGridView = new System.Windows.Forms.DataGridView();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.igrejasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.igrejasTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.IgrejasTableAdapter();
             this.estadosTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.EstadosTableAdapter();
@@ -55,6 +56,9 @@
             this.cidadesTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.CidadesTableAdapter();
             this.cellMembersLabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejasAdminDataGridView)).BeginInit();
@@ -102,7 +106,7 @@
             this.igrejasAdminSaveButton.Location = new System.Drawing.Point(567, 241);
             this.igrejasAdminSaveButton.Name = "igrejasAdminSaveButton";
             this.igrejasAdminSaveButton.Size = new System.Drawing.Size(145, 42);
-            this.igrejasAdminSaveButton.TabIndex = 3;
+            this.igrejasAdminSaveButton.TabIndex = 6;
             this.igrejasAdminSaveButton.Text = "Salvar";
             this.igrejasAdminSaveButton.UseVisualStyleBackColor = true;
             this.igrejasAdminSaveButton.Click += new System.EventHandler(this.IgrejasAdminSaveButton_Click);
@@ -113,7 +117,7 @@
             this.igrejasAdminCancelButton.Location = new System.Drawing.Point(718, 241);
             this.igrejasAdminCancelButton.Name = "igrejasAdminCancelButton";
             this.igrejasAdminCancelButton.Size = new System.Drawing.Size(145, 42);
-            this.igrejasAdminCancelButton.TabIndex = 4;
+            this.igrejasAdminCancelButton.TabIndex = 7;
             this.igrejasAdminCancelButton.Text = "Cancel";
             this.igrejasAdminCancelButton.UseVisualStyleBackColor = true;
             this.igrejasAdminCancelButton.Click += new System.EventHandler(this.IgrejasAdminCancelButton_Click);
@@ -147,7 +151,7 @@
             this.igrejasAdminEstadoComboBox.Location = new System.Drawing.Point(727, 116);
             this.igrejasAdminEstadoComboBox.Name = "igrejasAdminEstadoComboBox";
             this.igrejasAdminEstadoComboBox.Size = new System.Drawing.Size(113, 32);
-            this.igrejasAdminEstadoComboBox.TabIndex = 14;
+            this.igrejasAdminEstadoComboBox.TabIndex = 5;
             this.igrejasAdminEstadoComboBox.ValueMember = "Sigla";
             // 
             // estadosBindingSource
@@ -166,7 +170,7 @@
             this.igrejasAdminTextBox.Location = new System.Drawing.Point(13, 119);
             this.igrejasAdminTextBox.Name = "igrejasAdminTextBox";
             this.igrejasAdminTextBox.Size = new System.Drawing.Size(432, 29);
-            this.igrejasAdminTextBox.TabIndex = 15;
+            this.igrejasAdminTextBox.TabIndex = 3;
             // 
             // igrejasAdminDataGridView
             // 
@@ -174,50 +178,34 @@
             this.igrejasAdminDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.igrejasAdminDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.igrejasAdminDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.igrejasAdminDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.igrejasAdminDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeDataGridViewTextBoxColumn,
             this.cidadeDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn});
             this.igrejasAdminDataGridView.DataSource = this.igrejasBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.igrejasAdminDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.igrejasAdminDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.igrejasAdminDataGridView.Location = new System.Drawing.Point(12, 289);
             this.igrejasAdminDataGridView.Name = "igrejasAdminDataGridView";
             this.igrejasAdminDataGridView.ReadOnly = true;
             this.igrejasAdminDataGridView.Size = new System.Drawing.Size(868, 330);
-            this.igrejasAdminDataGridView.TabIndex = 16;
+            this.igrejasAdminDataGridView.TabIndex = 8;
             this.igrejasAdminDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.IgrejasAdminDataGridView_CellClick);
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // cidadeDataGridViewTextBoxColumn
-            // 
-            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "Cidade";
-            this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
-            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
-            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cidadeDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Width = 150;
             // 
             // igrejasBindingSource
             // 
@@ -241,7 +229,7 @@
             this.igrejasAdminCidadeComboBox.Location = new System.Drawing.Point(455, 116);
             this.igrejasAdminCidadeComboBox.Name = "igrejasAdminCidadeComboBox";
             this.igrejasAdminCidadeComboBox.Size = new System.Drawing.Size(266, 32);
-            this.igrejasAdminCidadeComboBox.TabIndex = 18;
+            this.igrejasAdminCidadeComboBox.TabIndex = 4;
             this.igrejasAdminCidadeComboBox.ValueMember = "Nome";
             // 
             // cidadesBindingSource
@@ -288,6 +276,36 @@
             this.label15.Size = new System.Drawing.Size(197, 26);
             this.label15.TabIndex = 48;
             this.label15.Text = "Número de Igrejas:";
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // cidadeDataGridViewTextBoxColumn
+            // 
+            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "Cidade";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cidadeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
+            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cidadeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.estadoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Width = 150;
             // 
             // IgrejasAdmin
             // 
@@ -340,9 +358,6 @@
         private Igrejafont10DataSet igrejafont10DataSet;
         private System.Windows.Forms.BindingSource igrejasBindingSource;
         private Igrejafont10DataSetTableAdapters.IgrejasTableAdapter igrejasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource estadosBindingSource;
         private Igrejafont10DataSetTableAdapters.EstadosTableAdapter estadosTableAdapter;
         private System.Windows.Forms.ComboBox igrejasAdminCidadeComboBox;
@@ -352,5 +367,8 @@
         private Igrejafont10DataSetTableAdapters.CidadesTableAdapter cidadesTableAdapter;
         private System.Windows.Forms.Label cellMembersLabel;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
     }
 }

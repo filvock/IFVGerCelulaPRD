@@ -149,7 +149,7 @@
             this.versionLabel.AutoSize = true;
             this.versionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.versionLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.versionLabel.Location = new System.Drawing.Point(2, 176);
+            this.versionLabel.Location = new System.Drawing.Point(12, 313);
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(75, 24);
             this.versionLabel.TabIndex = 8;
@@ -161,7 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(698, 200);
+            this.ClientSize = new System.Drawing.Size(698, 346);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.formLoginNewPw2TextBox);
             this.Controls.Add(this.formLoginNewPwTextBox);

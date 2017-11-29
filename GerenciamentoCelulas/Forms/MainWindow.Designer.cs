@@ -169,19 +169,19 @@
             // pastoresToolStripMenuItem
             // 
             this.pastoresToolStripMenuItem.Name = "pastoresToolStripMenuItem";
-            this.pastoresToolStripMenuItem.Size = new System.Drawing.Size(191, 30);
-            this.pastoresToolStripMenuItem.Text = "Pastores";
+            this.pastoresToolStripMenuItem.Size = new System.Drawing.Size(336, 30);
+            this.pastoresToolStripMenuItem.Text = "Pastores - Em Construção";
             // 
             // supervisoresToolStripMenuItem
             // 
             this.supervisoresToolStripMenuItem.Name = "supervisoresToolStripMenuItem";
-            this.supervisoresToolStripMenuItem.Size = new System.Drawing.Size(191, 30);
-            this.supervisoresToolStripMenuItem.Text = "Supervisores";
+            this.supervisoresToolStripMenuItem.Size = new System.Drawing.Size(336, 30);
+            this.supervisoresToolStripMenuItem.Text = "Supervisores - Em Construção";
             // 
             // líderesToolStripMenuItem
             // 
             this.líderesToolStripMenuItem.Name = "líderesToolStripMenuItem";
-            this.líderesToolStripMenuItem.Size = new System.Drawing.Size(191, 30);
+            this.líderesToolStripMenuItem.Size = new System.Drawing.Size(336, 30);
             this.líderesToolStripMenuItem.Text = "Líderes";
             this.líderesToolStripMenuItem.Click += new System.EventHandler(this.líderesToolStripMenuItem_Click);
             // 
@@ -199,22 +199,22 @@
             // membrosToolStripMenuItem
             // 
             this.membrosToolStripMenuItem.Name = "membrosToolStripMenuItem";
-            this.membrosToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
+            this.membrosToolStripMenuItem.Size = new System.Drawing.Size(363, 30);
             this.membrosToolStripMenuItem.Text = "Membros";
             this.membrosToolStripMenuItem.Click += new System.EventHandler(this.membrosToolStripMenuItem_Click);
             // 
             // convidadosToolStripMenuItem
             // 
             this.convidadosToolStripMenuItem.Name = "convidadosToolStripMenuItem";
-            this.convidadosToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
-            this.convidadosToolStripMenuItem.Text = "Convidados";
+            this.convidadosToolStripMenuItem.Size = new System.Drawing.Size(363, 30);
+            this.convidadosToolStripMenuItem.Text = "Convidados - Em Construção";
             this.convidadosToolStripMenuItem.Click += new System.EventHandler(this.convidadosToolStripMenuItem_Click);
             // 
             // novosNascidosToolStripMenuItem
             // 
             this.novosNascidosToolStripMenuItem.Name = "novosNascidosToolStripMenuItem";
-            this.novosNascidosToolStripMenuItem.Size = new System.Drawing.Size(218, 30);
-            this.novosNascidosToolStripMenuItem.Text = "Novos Nascidos";
+            this.novosNascidosToolStripMenuItem.Size = new System.Drawing.Size(363, 30);
+            this.novosNascidosToolStripMenuItem.Text = "Novos Nascidos - Em Construção";
             // 
             // célulasToolStripMenuItem3
             // 
@@ -264,6 +264,7 @@
             this.frequênciaCultoToolStripMenuItem.Name = "frequênciaCultoToolStripMenuItem";
             this.frequênciaCultoToolStripMenuItem.Size = new System.Drawing.Size(244, 30);
             this.frequênciaCultoToolStripMenuItem.Text = "Frequência Culto";
+            this.frequênciaCultoToolStripMenuItem.Click += new System.EventHandler(this.frequênciaCultoToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -285,7 +286,6 @@
             this.mainWindowMenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
 
         }
 
