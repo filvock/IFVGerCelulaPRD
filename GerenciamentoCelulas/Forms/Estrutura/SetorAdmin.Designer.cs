@@ -58,6 +58,7 @@
             this.redeCheckBox = new System.Windows.Forms.CheckBox();
             this.areaComboBox = new System.Windows.Forms.ComboBox();
             this.areasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.celulasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.distritoComboBox = new System.Windows.Forms.ComboBox();
             this.distritosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -85,6 +86,7 @@
             this.redesTableAdapter1 = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.RedesTableAdapter();
             this.distritosTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.DistritosTableAdapter();
             this.areasTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.AreasTableAdapter();
+            this.celulasTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.CelulasTableAdapter();
             this.cellMembersLabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.codTextBox = new System.Windows.Forms.TextBox();
@@ -96,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejasBindingSource)).BeginInit();
@@ -366,6 +369,11 @@
             // 
             this.areasBindingSource.DataMember = "Areas";
             this.areasBindingSource.DataSource = this.igrejafont10DataSet;
+            // // 
+            // areasBindingSource
+            // 
+            this.celulasBindingSource.DataMember = "Celulas";
+            this.celulasBindingSource.DataSource = this.igrejafont10DataSet;
             // 
             // label11
             // 
@@ -576,6 +584,7 @@
             // areasTableAdapter
             // 
             this.areasTableAdapter.ClearBeforeFill = true;
+            this.celulasTableAdapter.ClearBeforeFill = true;
             // 
             // cellMembersLabel
             // 
@@ -675,6 +684,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejasBindingSource)).EndInit();
@@ -701,10 +711,12 @@
         private Igrejafont10DataSetTableAdapters.DistritosTableAdapter distritosTableAdapter;
         private System.Windows.Forms.BindingSource areasBindingSource;
         private Igrejafont10DataSetTableAdapters.AreasTableAdapter areasTableAdapter;
+        private System.Windows.Forms.BindingSource celulasBindingSource;
+        private Igrejafont10DataSetTableAdapters.CelulasTableAdapter celulasTableAdapter;
         private System.Windows.Forms.CheckBox distritoCheckBox;
         private System.Windows.Forms.CheckBox areaCheckBox;
         private System.Windows.Forms.CheckBox redeCheckBox;
-        private System.Windows.Forms.ComboBox areaComboBox;
+        private System.Windows.Forms.ComboBox areaComboBox; 
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox distritoComboBox;
         private System.Windows.Forms.Label label10;

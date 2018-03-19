@@ -147,8 +147,8 @@ D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\bin\Debug\GerenciamentoCelulas.ex
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\bin\Debug\GerenciamentoCelulas.application
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\bin\Debug\GerenciamentoCelulas.exe
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\bin\Debug\GerenciamentoCelulas.pdb
-D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.csprojResolveAssemblyReference.cache
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Membros.ConvidadoAdd.resources
+D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Reports.ServiceFrequency.resources
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Reports.CellFrequency.resources
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Reports.SuccessLadder.resources
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.CidadeAdd.resources
@@ -174,9 +174,8 @@ D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Fo
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Membros.MemberAdmin.resources
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Properties.Resources.resources
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.csproj.GenerateResource.Cache
+D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.csproj.CoreCompileInputs.cache
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.exe.manifest
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.application
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.exe
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.pdb
-D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.csproj.CoreCompileInputs.cache
-D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Reports.ServiceFrequency.resources

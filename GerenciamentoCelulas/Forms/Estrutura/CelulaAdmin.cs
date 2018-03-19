@@ -60,6 +60,7 @@ namespace GerenciamentoCelulas.Forms.Estrutura
             this.distritosTableAdapter.Fill(this.igrejafont10DataSet.Distritos);
             this.redesTableAdapter1.Fill(this.igrejafont10DataSet.Redes);
             this.igrejasTableAdapter1.Fill(this.igrejafont10DataSet.Igrejas);
+            this.membrosTableAdapter.Fill(this.igrejafont10DataSet.Membros);
             
             loginInfo login = new loginInfo();
 
@@ -221,12 +222,65 @@ namespace GerenciamentoCelulas.Forms.Estrutura
 
         private void RedeWindowDeactivateRede_Click(object sender, EventArgs e)
         {
-            GerenciamentoCelulas.Igrejafont10DataSet.DistritosRow newRow = igrejafont10DataSet.Distritos.NewDistritosRow();
-            Igrejafont10DataSetTableAdapters.DistritosTableAdapter tableAdapter = new Igrejafont10DataSetTableAdapters.DistritosTableAdapter();
-            dataGridView.CurrentRow.Cells[9].Value = "No";
-            tableAdapter.Update(igrejafont10DataSet.Distritos);
+            if (codeTextBox.Text.Length > 0)
+            {
+                DialogResult result = MessageBox.Show("Deseja remover a Célula: " + codeTextBox.Text, "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    DialogResult result1 = MessageBox.Show("Todos os membros da célula serão movidos para -Sem Célula (Cod=0)- Confirma?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result1 == DialogResult.Yes)
+                    {
+                        SetMembersToNoCell(codeTextBox.Text);
+                        try
+                        {
+                            celulasBindingSource1.RemoveAt(celulasBindingSource1.Find("Codigo", codeTextBox.Text));
+                            celulasBindingSource1.EndEdit();
+                            celulasTableAdapter1.Update(igrejafont10DataSet.Celulas1);
+                            celulasTableAdapter1.Fill(igrejafont10DataSet.Celulas1);
+                            celulasTableAdapter.Update(igrejafont10DataSet.Celulas);
+                            celulasTableAdapter.Fill(igrejafont10DataSet.Celulas);
+
+                            cellMembersLabel.Text = dataGridView.RowCount.ToString();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Update failed /n" + ex.ToString());
+                        }
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Selecione um membro para ser removido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
             ClearFields();
             LockFields();
+        }
+
+        private void SetMembersToNoCell(String codCell)
+        {
+            membrosBindingSource.Filter = "Celula= '" + codCell + "'";
+            int j = membrosBindingSource.Count;
+            membrosBindingSource.MoveFirst();
+            for (int i=0; i<j; i++)
+            {
+                DataRowView row = (DataRowView)membrosBindingSource.Current;
+                row["Celula"] = "0";
+                membrosBindingSource.MoveNext();
+            }
+
+            try
+            {
+                membrosBindingSource.EndEdit();
+                membrosTableAdapter.Update(this.igrejafont10DataSet.Membros);
+                this.membrosTableAdapter.FillBy(this.igrejafont10DataSet.Membros);
+                membrosBindingSource.ResetBindings(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Update failed /n" + ex.ToString());
+            }
+
         }
 
         private void igrejaComboBox_SelectedValueChanged(object sender, EventArgs e)

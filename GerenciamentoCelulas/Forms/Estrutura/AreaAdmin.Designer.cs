@@ -51,6 +51,7 @@
             this.areasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.igrejafont10DataSet = new GerenciamentoCelulas.Igrejafont10DataSet();
             this.areasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.setoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.distritosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.igrejasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.redesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -59,6 +60,7 @@
             this.distritosTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.DistritosTableAdapter();
             this.areasTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.AreasTableAdapter();
             this.areasTableAdapter1 = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.Areas1TableAdapter();
+            this.setoresTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.SetoresTableAdapter();
             this.codTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -90,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redesBindingSource)).BeginInit();
@@ -268,6 +271,8 @@
             // 
             this.areasBindingSource.DataMember = "Areas";
             this.areasBindingSource.DataSource = this.igrejafont10DataSet;
+            this.setoresBindingSource.DataMember = "Setores";
+            this.setoresBindingSource.DataSource = this.igrejafont10DataSet;
             // 
             // igrejafont10DataSet
             // 
@@ -301,6 +306,7 @@
             // redesTableAdapter1
             // 
             this.redesTableAdapter1.ClearBeforeFill = true;
+            this.setoresTableAdapter.ClearBeforeFill = true;
             // 
             // distritosTableAdapter
             // 
@@ -613,6 +619,7 @@
             this.Load += new System.EventHandler(this.RedesAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.areasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritosBindingSource)).EndInit();
@@ -641,6 +648,8 @@
         private System.Windows.Forms.BindingSource areasBindingSource1;
         private Igrejafont10DataSetTableAdapters.AreasTableAdapter areasTableAdapter;
         private Igrejafont10DataSetTableAdapters.Areas1TableAdapter areasTableAdapter1;
+        private System.Windows.Forms.BindingSource setoresBindingSource;
+        private Igrejafont10DataSetTableAdapters.SetoresTableAdapter setoresTableAdapter;
         private System.Windows.Forms.TextBox codTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox nameTextBox;

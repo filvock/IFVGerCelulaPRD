@@ -50,6 +50,7 @@
             this.celulasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.igrejafont10DataSet = new GerenciamentoCelulas.Igrejafont10DataSet();
             this.celulasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.membrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.setoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.areasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.distritosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -85,6 +86,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.celulasTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.CelulasTableAdapter();
             this.celulasTableAdapter1 = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.Celulas1TableAdapter();
+            this.membrosTableAdapter = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.MembrosTableAdapter();
             this.redeCheckBox = new System.Windows.Forms.CheckBox();
             this.setorCheckBox = new System.Windows.Forms.CheckBox();
             this.areaCheckBox = new System.Windows.Forms.CheckBox();
@@ -107,6 +109,7 @@
             this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).BeginInit();
@@ -288,7 +291,10 @@
             // 
             this.celulasBindingSource.DataMember = "Celulas";
             this.celulasBindingSource.DataSource = this.igrejafont10DataSet;
+            // celulasBindingSource
             // 
+            this.membrosBindingSource.DataMember = "Membros";
+            this.membrosBindingSource.DataSource = this.igrejafont10DataSet;// 
             // igrejafont10DataSet
             // 
             this.igrejafont10DataSet.DataSetName = "Igrejafont10DataSet";
@@ -569,6 +575,9 @@
             // 
             this.celulasTableAdapter1.ClearBeforeFill = true;
             // 
+            // celulasTableAdapter1
+            // 
+            this.membrosTableAdapter.ClearBeforeFill = true;// 
             // redeCheckBox
             // 
             this.redeCheckBox.AutoSize = true;
@@ -825,6 +834,7 @@
             this.Load += new System.EventHandler(this.RedesAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igrejafont10DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.celulasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.setoresBindingSource)).EndInit();
@@ -882,6 +892,8 @@
         private Igrejafont10DataSetTableAdapters.CelulasTableAdapter celulasTableAdapter;
         private System.Windows.Forms.BindingSource celulasBindingSource1;
         private Igrejafont10DataSetTableAdapters.Celulas1TableAdapter celulasTableAdapter1;
+        private System.Windows.Forms.BindingSource membrosBindingSource;
+        private Igrejafont10DataSetTableAdapters.MembrosTableAdapter membrosTableAdapter;
         private System.Windows.Forms.CheckBox redeCheckBox;
         private System.Windows.Forms.CheckBox setorCheckBox;
         private System.Windows.Forms.CheckBox areaCheckBox;

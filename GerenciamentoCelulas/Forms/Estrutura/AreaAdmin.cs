@@ -193,10 +193,38 @@ namespace GerenciamentoCelulas.Forms.Estrutura
 
         private void RedeWindowDeactivateRede_Click(object sender, EventArgs e)
         {
-            GerenciamentoCelulas.Igrejafont10DataSet.DistritosRow newRow = igrejafont10DataSet.Distritos.NewDistritosRow();
-            Igrejafont10DataSetTableAdapters.DistritosTableAdapter tableAdapter = new Igrejafont10DataSetTableAdapters.DistritosTableAdapter();
-            dataGridView.CurrentRow.Cells[9].Value = "No";
-            tableAdapter.Update(igrejafont10DataSet.Distritos);
+            if (codeTextBox.Text.Length > 0)
+            {
+                DialogResult result = MessageBox.Show("Deseja remover a Área: " + codeTextBox.Text, "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    setoresBindingSource.Position = setoresBindingSource.Find("Area", codeTextBox.Text);
+                    if (setoresBindingSource.Position <= 0)
+                    {
+                        try
+                        {
+                            areasBindingSource1.RemoveAt(areasBindingSource1.Find("Codigo", codeTextBox.Text));
+                            setoresBindingSource.EndEdit();
+                            areasTableAdapter1.Update(igrejafont10DataSet.Areas1);
+                            areasTableAdapter1.Fill(igrejafont10DataSet.Areas1);
+                            areasTableAdapter.Update(igrejafont10DataSet.Areas);
+                            areasTableAdapter.Fill(igrejafont10DataSet.Areas);
+
+                            cellMembersLabel.Text = dataGridView.RowCount.ToString();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Update failed /n" + ex.ToString());
+                        }
+                    }
+                    else
+                        MessageBox.Show("Remova os setores dessa área antes de exclui-la.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+                MessageBox.Show("Selecione um membro para ser removido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             ClearFields();
             LockFields();
         }

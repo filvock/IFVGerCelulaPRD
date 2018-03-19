@@ -48,7 +48,8 @@ namespace GerenciamentoCelulas.Forms.Estrutura
             this.distritosTableAdapter.Fill(this.igrejafont10DataSet.Distritos);
             this.redesTableAdapter1.Fill(this.igrejafont10DataSet.Redes);
             this.igrejasTableAdapter1.Fill(this.igrejafont10DataSet.Igrejas);
-            
+            this.celulasTableAdapter.Fill(this.igrejafont10DataSet.Celulas);
+
             loginInfo login = new loginInfo();
 
             igrejaComboBox.SelectedValue = login.GetIgreja();
@@ -173,13 +174,43 @@ namespace GerenciamentoCelulas.Forms.Estrutura
 
         private void RedeWindowDeactivateRede_Click(object sender, EventArgs e)
         {
-            GerenciamentoCelulas.Igrejafont10DataSet.DistritosRow newRow = igrejafont10DataSet.Distritos.NewDistritosRow();
-            Igrejafont10DataSetTableAdapters.DistritosTableAdapter tableAdapter = new Igrejafont10DataSetTableAdapters.DistritosTableAdapter();
-            dataGridView.CurrentRow.Cells[9].Value = "No";
-            tableAdapter.Update(igrejafont10DataSet.Distritos);
+            if (codeTextBox.Text.Length > 0)
+            {
+                DialogResult result = MessageBox.Show("Deseja remover o Setor: " + codeTextBox.Text, "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    celulasBindingSource.Position = celulasBindingSource.Find("Setor", codeTextBox.Text);
+                    if (celulasBindingSource.Position <= 0)
+                    {
+                        try
+                        {
+                            setoresBindingSource1.RemoveAt(setoresBindingSource1.Find("Codigo", codeTextBox.Text));
+                            setoresBindingSource.EndEdit();
+                            setoresTableAdapter1.Update(igrejafont10DataSet.Setores1);
+                            setoresTableAdapter1.Fill(igrejafont10DataSet.Setores1);
+                            setoresTableAdapter.Update(igrejafont10DataSet.Setores);
+                            setoresTableAdapter.Fill(igrejafont10DataSet.Setores);
+
+                            cellMembersLabel.Text = dataGridView.RowCount.ToString();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Update failed /n" + ex.ToString());
+                        }
+                    }
+                    else
+                        MessageBox.Show("Remova as células desse setor antes de exclui-la.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+                MessageBox.Show("Selecione um membro para ser removido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             ClearFields();
             LockFields();
         }
+
+       
 
         private void igrejaComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
