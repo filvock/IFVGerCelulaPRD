@@ -54,6 +54,7 @@
             this.escadaDoSucessoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frequênciaCélulaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frequênciaCultoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofertasNaCélulaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainWindowMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -239,7 +240,8 @@
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.escadaDoSucessoToolStripMenuItem,
             this.frequênciaCélulaToolStripMenuItem,
-            this.frequênciaCultoToolStripMenuItem});
+            this.frequênciaCultoToolStripMenuItem,
+            this.ofertasNaCélulaToolStripMenuItem});
             this.relatóriosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
@@ -265,6 +267,13 @@
             this.frequênciaCultoToolStripMenuItem.Size = new System.Drawing.Size(244, 30);
             this.frequênciaCultoToolStripMenuItem.Text = "Frequência Culto";
             this.frequênciaCultoToolStripMenuItem.Click += new System.EventHandler(this.frequênciaCultoToolStripMenuItem_Click);
+            // 
+            // ofertasNaCélulaToolStripMenuItem
+            // 
+            this.ofertasNaCélulaToolStripMenuItem.Name = "ofertasNaCélulaToolStripMenuItem";
+            this.ofertasNaCélulaToolStripMenuItem.Size = new System.Drawing.Size(244, 30);
+            this.ofertasNaCélulaToolStripMenuItem.Text = "Ofertas na célula";
+            this.ofertasNaCélulaToolStripMenuItem.Click += new System.EventHandler(this.ofertasNaCélulaToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -317,6 +326,7 @@
         private System.Windows.Forms.ToolStripMenuItem escadaDoSucessoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frequênciaCélulaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frequênciaCultoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ofertasNaCélulaToolStripMenuItem;
     }
 }
 

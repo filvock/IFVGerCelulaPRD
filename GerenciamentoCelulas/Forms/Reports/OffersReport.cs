@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GerenciamentoCelulas.Forms.Reports
 {
-    public partial class CellFrequency : Form
+    public partial class OffersReport : Form
     {
-        public CellFrequency()
+        public OffersReport()
         {
             InitializeComponent();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
@@ -21,11 +21,14 @@ namespace GerenciamentoCelulas.Forms.Reports
 
         private void MemberAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'igrejafont10DataSet.OfertasCelulas'. Você pode movê-la ou removê-la conforme necessário.
+            this.ofertasCelulas1TableAdapter.FillBy(this.igrejafont10DataSet.OfertasCelulas1);
             // TODO: This line of code loads data into the 'igrejafont10DataSet.FrequenciaCelula11' table. You can move, or remove it, as needed.
             this.frequenciaCelula11TableAdapter.FillByDistinct(this.igrejafont10DataSet.FrequenciaCelula11);
             this.frequenciaCelula1TableAdapter.FillBy(this.igrejafont10DataSet.FrequenciaCelula1);
             
             this.celulasTableAdapter.FillBy(this.igrejafont10DataSet.Celulas);
+            this.celulasTableAdapter1.FillBy(this.igrejafont10DataSet.Celulas);
             this.setoresTableAdapter.FillBy(this.igrejafont10DataSet.Setores);
             this.areasTableAdapter.FillBy(this.igrejafont10DataSet.Areas);
             this.distritosTableAdapter.Fill(this.igrejafont10DataSet.Distritos);
@@ -68,13 +71,14 @@ namespace GerenciamentoCelulas.Forms.Reports
             celulaComboBox.Enabled = false;
             celulaCheckBox.Checked = true;
 
-            FiltraMembros();
+            FiltraCelulas();
 
             this.dataGridView.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
             float widthRatio = Screen.PrimaryScreen.Bounds.Width / 1366F;
@@ -120,7 +124,7 @@ namespace GerenciamentoCelulas.Forms.Reports
 
         private void celulaComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            FiltraMembros();
+            FiltraCelulas();
 
         }
 
@@ -135,7 +139,7 @@ namespace GerenciamentoCelulas.Forms.Reports
             }
             else
             {
-                FiltraMembros();
+                FiltraCelulas();
             }
         }
 
@@ -155,7 +159,7 @@ namespace GerenciamentoCelulas.Forms.Reports
             }
             else
             {
-                FiltraMembros();
+                FiltraCelulas();
             }
         }
 
@@ -178,7 +182,7 @@ namespace GerenciamentoCelulas.Forms.Reports
             }
             else
             {
-                FiltraMembros();
+                FiltraCelulas();
             }
         }
 
@@ -205,16 +209,14 @@ namespace GerenciamentoCelulas.Forms.Reports
             }
             else
             {
-                FiltraMembros();
+                FiltraCelulas();
             }
         }
 
         private void FiltraCelulas()
         {
-
             if (celulaCheckBox.Checked == false)
             {
-
                 if (setorComboBox.SelectedValue != null && areaComboBox.SelectedValue != null && distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null && igrejaComboBox.SelectedValue != null)
                 {
                     celulasBindingSource.Filter = "Setor = '" + setorComboBox.SelectedValue.ToString() + "'" + "AND Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
@@ -236,128 +238,129 @@ namespace GerenciamentoCelulas.Forms.Reports
                     celulasBindingSource.Filter = "Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
                 }
             }
-            else
-            {
-                FiltraMembros();
-            }
+
+            FiltraCelulasOfertas();
+
+
         }
 
-        private void FiltraMembros()
+        private void FiltraCelulasOfertas()
         {
             if (celulaComboBox.SelectedValue != null && setorComboBox.SelectedValue != null && areaComboBox.SelectedValue != null && distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null && igrejaComboBox.SelectedValue != null)
             {
-                membrosBindingSource.Filter = "Celula = '" + celulaComboBox.SelectedValue.ToString() + "'" + " AND Setor = '" + setorComboBox.SelectedValue.ToString() + "'" + "AND Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
+                celulasBindingSource1.Filter = "Codigo = '" + celulaComboBox.SelectedValue.ToString() + "'" + "AND Setor = '" + setorComboBox.SelectedValue.ToString() + "'" + "AND Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
             }
             else if (setorComboBox.SelectedValue != null && areaComboBox.SelectedValue != null && distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null && igrejaComboBox.SelectedValue != null)
             {
-                membrosBindingSource.Filter = "Setor = '" + setorComboBox.SelectedValue.ToString() + "'" + "AND Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
+                celulasBindingSource1.Filter = "Setor = '" + setorComboBox.SelectedValue.ToString() + "'" + "AND Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
             }
             else if (areaComboBox.SelectedValue != null && distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null && igrejaComboBox.SelectedValue != null)
             {
-                membrosBindingSource.Filter = "Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
+                celulasBindingSource1.Filter = "Area = '" + areaComboBox.SelectedValue.ToString() + "'" + "AND Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
             }
             else if (distritoComboBox.SelectedValue != null && redeComboBox.SelectedValue != null && igrejaComboBox.SelectedValue != null)
             {
-                membrosBindingSource.Filter = "Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
+                celulasBindingSource1.Filter = "Distrito  = '" + distritoComboBox.SelectedValue.ToString() + "'" + "AND Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
             }
             else if (redeComboBox.SelectedValue != null && igrejaComboBox.SelectedValue != null)
             {
-                membrosBindingSource.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
+                celulasBindingSource1.Filter = "Rede = '" + redeComboBox.SelectedValue.ToString() + "'" + "AND Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
             }
             else if (igrejaComboBox.SelectedValue != null)
             {
-                membrosBindingSource.Filter = "Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
+                celulasBindingSource1.Filter = "Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'";
             }
-
-            cellMembersLabel.Text = dataGridView.RowCount.ToString();
-            SetFrequencyData();
-            
+            SetOfferData();
         }
 
-        private void SetFrequencyData()
+
+        
+
+        private void SetOfferData()
         {
             foreach (DataGridViewRow myRow in dataGridView.Rows)
-            {              
+            {
+                myRow.Cells[1].Value = "";
                 myRow.Cells[2].Value = "";
                 myRow.Cells[3].Value = "";
                 myRow.Cells[4].Value = "";
                 myRow.Cells[5].Value = "";
                 myRow.Cells[6].Value = "";
             }
-            
+
             var firstDayOfMonth = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, 1);
             var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
-
-            if (igrejaComboBox.SelectedValue != null) frequenciaCelula1BindingSource.Filter = "Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'" + "AND Data >= '" + firstDayOfMonth + "' AND Data <= '" + lastDayOfMonth + "'";
-                        
-            if (frequenciaCelula1BindingSource.Count > 0)
+            
+            if (igrejaComboBox.SelectedValue != null)
             {
-                int count = frequenciaCelula1BindingSource.Count;
-                frequenciaCelula1BindingSource.MoveFirst();
-                int s = 0, n = 0, pi = 0, r = 0, aa = 0, o = 0, nl = 0;
+                ofertasCelulas1BindingSource.Filter = "Igreja = '" + igrejaComboBox.SelectedValue.ToString() + "'" + " AND Data >= '" + firstDayOfMonth + "' AND Data <= '" + lastDayOfMonth + "'";
+            }
+
+
+            if (ofertasCelulas1BindingSource.Count > 0)
+            {
+                int count = ofertasCelulas1BindingSource.Count;
+                ofertasCelulas1BindingSource.MoveFirst();
 
                 for (int i = 0; i <= count; i++)
                 {
-                    DataRowView row = (DataRowView)frequenciaCelula1BindingSource.Current;
+                    DataRowView row = (DataRowView)ofertasCelulas1BindingSource.Current;
 
                     int j = 0;
                     bool notFound = true;
 
-                    while (notFound && j <dataGridView.Rows.Count)
+                    while (notFound && j < dataGridView.Rows.Count)
                     {
-                        if (dataGridView.Rows[j].Cells[0].Value.ToString().Equals(row[1].ToString()))
+                        if (dataGridView.Rows[j].Cells[0].Value.ToString().Equals(row[2].ToString()))
                         {
                             notFound = false;
-                            int dia = Convert.ToInt32(row[4].ToString().Substring(0, 2));
+                            int dia = Convert.ToInt32(row[9].ToString().Substring(0, 2));
                             int week = Convert.ToInt32((1 + (dia / 7)).ToString("0"));
 
-                                
-                                if (row[3].ToString().Equals("0"))
-                                {
-                                    dataGridView.Rows[j].Cells[week + 1].Value = "N";
-                                    n++;
-                                }
-                                else if (row[3].ToString().Equals("1"))
-                                {
-                                    dataGridView.Rows[j].Cells[week + 1].Value = "S";
-                                    s++;
-                                }
-                                else if (row[3].ToString().Equals("2"))
-                                {
-                                    dataGridView.Rows[j].Cells[week + 1].Value = "PI";
-                                    pi++;
-                                }
-                                else if (row[3].ToString().Equals("3"))
-                                {
-                                    dataGridView.Rows[j].Cells[week + 1].Value = "R";
-                                    r++;
-                                }
-                                else if (row[3].ToString().Equals("4"))
-                                {
-                                    dataGridView.Rows[j].Cells[week + 1].Value = "AA";
-                                    aa++;
-                                }
-                                else if (row[3].ToString().Equals("5"))
-                                {
-                                    dataGridView.Rows[j].Cells[week + 1].Value = "O";
-                                    o++;
-                                }                                
+                            dataGridView.Rows[j].Cells[week].Value = row[8].ToString();
                         }
                         j++;
                     }
-                    frequenciaCelula1BindingSource.MoveNext();
+                    ofertasCelulas1BindingSource.MoveNext();
                 }
 
-                nl = dataGridView.Rows.Count  * 5 - s - n - pi - r - aa - o;
+                double week1 = 0;
+                double week2 = 0;
+                double week3 = 0;
+                double week4 = 0;
+                double week5 = 0;
+                double total = 0;
 
-                double[] yValues = {s,n,pi,r,aa,o,nl};
-                String[] xValues = { "S", "N", "PI", "R", "AA", "O", "NL" };
-                    
-                chart1.Series["Data"].Points.DataBindXY(xValues, yValues);
-                chart1.Series["Data"].LegendText = "#AXISLABEL - #PERCENT" ;
+                if (dataGridView.RowCount > 0)
+                {
+                    for (int i = 0; i < dataGridView.RowCount; i++)
+                    {
+                        week1 = 0;
+                        week2 = 0;
+                        week3 = 0;
+                        week4 = 0;
+                        week5 = 0;
+                        total = 0;
 
+                        if (dataGridView.Rows[i].Cells[1].Value.ToString().Length > 0) week1 = Convert.ToDouble(dataGridView.Rows[i].Cells[1].Value.ToString());
+                        if (dataGridView.Rows[i].Cells[2].Value.ToString().Length > 0) week2 = Convert.ToDouble(dataGridView.Rows[i].Cells[2].Value.ToString());
+                        if (dataGridView.Rows[i].Cells[3].Value.ToString().Length > 0) week3 = Convert.ToDouble(dataGridView.Rows[i].Cells[3].Value.ToString());
+                        if (dataGridView.Rows[i].Cells[4].Value.ToString().Length > 0) week4 = Convert.ToDouble(dataGridView.Rows[i].Cells[4].Value.ToString());
+                        if (dataGridView.Rows[i].Cells[5].Value.ToString().Length > 0) week5 = Convert.ToDouble(dataGridView.Rows[i].Cells[5].Value.ToString());
+                        
+                        if (week1 > 0) dataGridView.Rows[i].Cells[1].Value = Convert.ToDouble(week1).ToString("C");
+                        if (week2 > 0) dataGridView.Rows[i].Cells[2].Value = Convert.ToDouble(week2).ToString("C");
+                        if (week3 > 0) dataGridView.Rows[i].Cells[3].Value = Convert.ToDouble(week3).ToString("C");
+                        if (week4 > 0) dataGridView.Rows[i].Cells[4].Value = Convert.ToDouble(week4).ToString("C");
+                        if (week5 > 0) dataGridView.Rows[i].Cells[5].Value = Convert.ToDouble(week5).ToString("C");
+
+                        total = week1 + week2 + week3 + week4 + week5;
+                        dataGridView.Rows[i].Cells[6].Value = Convert.ToDouble(total).ToString("C");
+
+
+                    }
+                }
             }
-            
         }
 
         private void SetWeekValue(String week, DataRowView row)
@@ -394,17 +397,15 @@ namespace GerenciamentoCelulas.Forms.Reports
                 celulaComboBox.Enabled = false;
                 celulaCheckBox.Checked = true;
 
-                FiltraMembros();
+                FiltraCelulas();
 
             }
             else
             {
                 FiltraRedePorIgreja();
-                FiltraMembros();
+                FiltraCelulas();
                 redeComboBox.Enabled = true;
-
             }
-
         }
 
         private void distritoCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -430,7 +431,7 @@ namespace GerenciamentoCelulas.Forms.Reports
                 celulaComboBox.Enabled = false;
                 celulaCheckBox.Checked = true;
 
-                FiltraMembros();
+                FiltraCelulas();
 
 
             }
@@ -438,7 +439,7 @@ namespace GerenciamentoCelulas.Forms.Reports
             {
                 distritoComboBox.Enabled = true;
                 FiltraDistritoPorRede();
-                FiltraMembros();
+                FiltraCelulas();
             }
 
         }
@@ -461,7 +462,7 @@ namespace GerenciamentoCelulas.Forms.Reports
                 celulaComboBox.Enabled = false;
                 celulaCheckBox.Checked = true;
 
-                FiltraMembros();
+                FiltraCelulas();
 
 
             }
@@ -469,7 +470,7 @@ namespace GerenciamentoCelulas.Forms.Reports
             {
                 areaComboBox.Enabled = true;
                 FiltraAreaPorDistrito();
-                FiltraMembros();
+                FiltraCelulas();
             }
         }
 
@@ -486,14 +487,14 @@ namespace GerenciamentoCelulas.Forms.Reports
                 celulaComboBox.Enabled = false;
                 celulaCheckBox.Checked = true;
 
-                FiltraMembros();
+                FiltraCelulas();
 
             }
             else
             {
                 setorComboBox.Enabled = true;
                 FiltraSetorPorArea();
-                FiltraMembros();
+                FiltraCelulas();
             }
         }
 
@@ -509,13 +510,13 @@ namespace GerenciamentoCelulas.Forms.Reports
             {
                 celulaComboBox.Enabled = true;
                 FiltraCelulas();
-                FiltraMembros();
+                FiltraCelulas();
             }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            SetFrequencyData();
+            SetOfferData();
         }
     }
 }

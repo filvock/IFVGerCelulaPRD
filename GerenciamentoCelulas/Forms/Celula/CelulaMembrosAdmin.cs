@@ -499,6 +499,42 @@ namespace GerenciamentoCelulas.Forms.Celula
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+            System.Windows.Forms.BindingSource membros;
+            Igrejafont10DataSetTableAdapters.Membros1TableAdapter membrosTableAdapter1;
+            membros = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(membros)).BeginInit();
+            membros.DataMember = "Membros1";
+            membros.DataSource = this.igrejafont10DataSet;
+            ((System.ComponentModel.ISupportInitialize)(membros)).EndInit();
+            membrosTableAdapter1 = new GerenciamentoCelulas.Igrejafont10DataSetTableAdapters.Membros1TableAdapter();
+            membrosTableAdapter1.ClearBeforeFill = true;
+
+            membrosTableAdapter1.Fill(igrejafont10DataSet.Membros1);
+
+            membros.Position = membros.Find("Codigo", dataGridView.CurrentRow.Cells[0].Value.ToString());
+            DataRowView row = (DataRowView)membros.Current;
+
+            row["Celula"] = "0";
+
+            membros.EndEdit();
+            membrosTableAdapter1.Update(igrejafont10DataSet.Membros1);
+
+            membrosTableAdapter.FillBy(igrejafont10DataSet.Membros);
+
+            FiltraMembros();            
+            
+        }
+
+        private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GerenciamentoCelulas.Forms.Membros.MemberAdd newmember = new GerenciamentoCelulas.Forms.Membros.MemberAdd((int)dataGridView.CurrentRow.Cells[0].Value, igrejaComboBox.SelectedValue.ToString());
+            newmember.ShowDialog();
+            membrosTableAdapter.FillBy(igrejafont10DataSet.Membros);
+        }
     }
 }
             

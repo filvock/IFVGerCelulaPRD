@@ -4,6 +4,10 @@
 
     partial class Igrejafont10DataSet
     {
+        partial class OfertasCelulas1DataTable
+        {
+        }
+
         partial class LiderCelulaDataTable
         {
         }

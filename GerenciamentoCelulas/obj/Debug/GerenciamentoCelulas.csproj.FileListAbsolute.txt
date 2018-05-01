@@ -148,6 +148,7 @@ D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\bin\Debug\GerenciamentoCelulas.ap
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\bin\Debug\GerenciamentoCelulas.exe
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\bin\Debug\GerenciamentoCelulas.pdb
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Membros.ConvidadoAdd.resources
+D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Reports.OffersReport.resources
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Reports.ServiceFrequency.resources
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Reports.CellFrequency.resources
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.Forms.Reports.SuccessLadder.resources

@@ -267,7 +267,7 @@ namespace GerenciamentoCelulas.Forms.Membros
                 else
                     newmember.Setor = "";
             }
-            if (celulaCheckBox.Checked == false) newmember.Celula = "0";
+            if (celulaCheckBox.Checked == true) newmember.Celula = "0";
             else
             {
                 if (celulaComboBox.SelectedValue != null && celulaComboBox.SelectedValue.ToString().Length != 0)

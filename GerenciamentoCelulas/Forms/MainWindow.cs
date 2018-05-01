@@ -207,6 +207,12 @@ namespace GerenciamentoCelulas.Forms
             GerenciamentoCelulas.Forms.Reports.ServiceFrequency window = new Reports.ServiceFrequency();
             window.Show();
         }
+
+        private void ofertasNaCélulaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GerenciamentoCelulas.Forms.Reports.OffersReport window = new Reports.OffersReport();
+            window.Show();
+        }
     }
 
            

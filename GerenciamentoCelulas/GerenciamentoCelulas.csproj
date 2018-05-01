@@ -32,7 +32,7 @@
     <ProductName>IFV Gerenciamento de Células</ProductName>
     <PublisherName>IFV</PublisherName>
     <SuiteName>IFV</SuiteName>
-    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationRevision>37</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -90,6 +90,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Reports\OffersReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\OffersReport.Designer.cs">
+      <DependentUpon>OffersReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\ServiceFrequency.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     <Compile Include="Settings.cs" />
     <EmbeddedResource Include="Forms\Membros\ConvidadoAdd.resx">
       <DependentUpon>ConvidadoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\OffersReport.resx">
+      <DependentUpon>OffersReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\ServiceFrequency.resx">
       <DependentUpon>ServiceFrequency.cs</DependentUpon>
