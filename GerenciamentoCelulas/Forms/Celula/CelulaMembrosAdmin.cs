@@ -49,6 +49,10 @@ namespace GerenciamentoCelulas.Forms.Celula
                 igrejaComboBox.SelectedValue = login.GetIgreja();
                 igrejaComboBox.Enabled = false;
             }
+            else if (login.GetRole().Equals("Presidente Estadual"))
+            {
+                igrejasBindingSource.Filter = "Estado = '" + login.GetEstado() + "'";
+            }
             FiltraCheckBox();
             LockFields();
 

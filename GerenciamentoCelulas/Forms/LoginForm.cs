@@ -72,7 +72,7 @@ namespace GerenciamentoCelulas.Forms
                             info.SetSenha(usrRdr.GetString(1));
                             info.SetIgreja(usrRdr.GetString(2));
                             info.SetRole(usrRdr.GetString(3));
-                            info.SetIsLogged(usrRdr.GetString(4));
+                            info.SetRegiao(usrRdr.GetString(4));
                             if (usrRdr.GetString(5) != null) firstLogin = usrRdr.GetString(5);
                             info.SetCidade(usrRdr.GetString(6));
                             info.SetEstado(usrRdr.GetString(7));

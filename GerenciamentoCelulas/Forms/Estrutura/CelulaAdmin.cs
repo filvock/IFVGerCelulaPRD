@@ -70,6 +70,15 @@ namespace GerenciamentoCelulas.Forms.Estrutura
             {                
                 igrejaComboBox.Enabled = false;
             }
+            else if (login.GetRole().Equals("Presidente Estadual"))
+            {
+                igrejasBindingSource.Filter = "Estado = '" + login.GetEstado() + "'";
+            }
+            //else if (login.GetRole().Equals("Presidente Regional"))
+            //{
+                //igrejasBindingSource.Filter = "Regiao = '" + login.GetRegiao() + "'";
+            //}
+
             FiltraCheckBox();
             cellMembersLabel.Text = dataGridView.RowCount.ToString();
 

@@ -58,6 +58,10 @@ namespace GerenciamentoCelulas.Forms.Estrutura
             {                
                 igrejaComboBox.Enabled = false;
             }
+            else if (login.GetRole().Equals("Presidente Estadual"))
+            {
+                igrejasBindingSource.Filter = "Estado = '" + login.GetEstado() + "'";
+            }
 
             cellMembersLabel.Text = dataGridView.RowCount.ToString();
             float widthRatio = Screen.PrimaryScreen.Bounds.Width / 1366F;

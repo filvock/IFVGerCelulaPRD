@@ -21,6 +21,7 @@ namespace GerenciamentoCelulas
         public static string isLogged = "";
         public static string cidade = "";
         public static string estado = "";
+        public static string regiao = "";
 
 
         public void SetNome(string text)
@@ -52,6 +53,10 @@ namespace GerenciamentoCelulas
         {
             estado = text;
         }
+        public void SetRegiao(string text)
+        {
+            regiao = text;
+        }
         public string GetNome()
         {
             return nome;
@@ -81,6 +86,10 @@ namespace GerenciamentoCelulas
         public string GetEstado()
         {
             return estado;
+        }
+        public string GetRegiao()
+        {
+            return regiao;
         }
         public void SetLoggedToYes()
         {

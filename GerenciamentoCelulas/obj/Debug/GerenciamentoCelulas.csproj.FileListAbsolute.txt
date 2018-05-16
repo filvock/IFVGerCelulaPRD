@@ -180,3 +180,4 @@ D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.ex
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.application
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.exe
 D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.pdb
+D:\GitHub\IFVGerCelulaPRD\GerenciamentoCelulas\obj\Debug\GerenciamentoCelulas.csprojResolveAssemblyReference.cache
